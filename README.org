@@ -3,7 +3,7 @@
 Back-end with Java log from Kawah Edukasi batch 6
 
 * DONE Day 1 [100%]
-  <2023-01-24 Tue>
+  SCHEDULED: <2023-01-24 Tue>
   - [X] Input & Output
   - [X] Variable
   - [X] Aritmatic
@@ -11,7 +11,7 @@ Back-end with Java log from Kawah Edukasi batch 6
   - [X] Selection
 
 * TODO Day 2 [0%]
-  <2023-01-25 Wed>
+  SCHEDULED: <2023-01-25 Wed>
   - [ ] Looping
   - [ ] Array
   - [ ] Function
