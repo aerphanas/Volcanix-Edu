@@ -1,0 +1,10 @@
+#+TITLE: Bootcamp Reschedule
+
+i have to learn my self
+
+* compile & run
+
+#+BEGIN_SRC bash
+javac Main.java
+java Main
+#+END_SRC
