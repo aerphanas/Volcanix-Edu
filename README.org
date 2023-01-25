@@ -2,7 +2,8 @@
 
 Back-end with Java log from Kawah Edukasi batch 6
 
-* DONE Day 1 [100%]
+* Week 1
+** DONE Day 1 [100%]
   SCHEDULED: <2023-01-24 Tue>
   - [X] Input & Output
   - [X] Variable
@@ -10,9 +11,16 @@ Back-end with Java log from Kawah Edukasi batch 6
   - [X] Operator
   - [X] Selection
 
-* TODO Day 2 [100%]
+** DONE Day 2 [100%]
   SCHEDULED: <2023-01-25 Wed>
   - [X] Looping
   - [X] Array
   - [X] Function
   - [X] Pointer
+** TODO Day 3 [0%]
+  SCHEDULED: <2023-01-26 Thu>
+  - [ ] Sorting
+  - [ ] Searching
+** TODO Day 4 [0%]
+  SCHEDULED: <2023-01-27 Fri>
+  - [ ] File Processing
