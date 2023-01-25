@@ -1,0 +1,10 @@
+#+TITLE: First Day on Bootcamp
+
+* How to run
+
+** compile & run
+
+#+BEGIN_SRC bash
+javac Main.java
+java Main
+#+END_SRC
