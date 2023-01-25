@@ -10,9 +10,9 @@ Back-end with Java log from Kawah Edukasi batch 6
   - [X] Operator
   - [X] Selection
 
-* TODO Day 2 [0%]
+* TODO Day 2 [100%]
   SCHEDULED: <2023-01-25 Wed>
-  - [ ] Looping
-  - [ ] Array
-  - [ ] Function
-  - [ ] Pointer
+  - [X] Looping
+  - [X] Array
+  - [X] Function
+  - [X] Pointer
