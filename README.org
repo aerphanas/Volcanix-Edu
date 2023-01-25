@@ -2,17 +2,17 @@
 
 Back-end with Java log from Kawah Edukasi batch 6
 
-<2023-01-24 Tue>
-* Day 1
-** DONE Input & Output
-** DONE Variable
-** DONE Aritmatic
-** DONE Operator
-** DONE Selection
+* DONE Day 1 [100%]
+  <2023-01-24 Tue>
+  - [X] Input & Output
+  - [X] Variable
+  - [X] Aritmatic
+  - [X] Operator
+  - [X] Selection
 
-<2023-01-25 Wed>
-* Day 2
-** TODO Looping
-** TODO Array
-** TODO Function
-** TODO Pointer
+* TODO Day 2 [0%]
+  <2023-01-25 Wed>
+  - [ ] Looping
+  - [ ] Array
+  - [ ] Function
+  - [ ] Pointer
