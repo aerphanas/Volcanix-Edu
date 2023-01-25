@@ -55,12 +55,12 @@ public class Main {
     ++ 	Increment 	Increases the value of a variable by 1 	++x 	
     -- 	Decrement 	Decreases the value of a variable by 1 	--x
     */
-    System.out.printf("1 + 1 = %d\n", 1+1);
-    System.out.printf("1 - 1 = %d\n", 1-1);
-    System.out.printf("1 * 1 = %d\n", 1*1);
-    System.out.printf("1 / 1 = %d\n", 1/1);
-    System.out.printf("1 % 1 = %d\n", 4%2);
-    System.out.printf("1++   = %d\n", 1 + 1);
-    System.out.printf("1--   = %d\n", 1 - 1);
+    System.out.printf("1 + 1  = %d\n", 1+1);
+    System.out.printf("1 - 1  = %d\n", 1-1);
+    System.out.printf("1 * 1  = %d\n", 1*1);
+    System.out.printf("1 / 1  = %d\n", 1/1);
+    System.out.printf("5 %% 2 = %d\n", 5%2);
+    System.out.printf("1++    = %d\n", 1 + 1);
+    System.out.printf("1--    = %d\n", 1 - 1);
   }
 }
