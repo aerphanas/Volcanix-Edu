@@ -17,7 +17,7 @@ Back-end with Java log from Kawah Edukasi batch 6
   - [X] Array
   - [X] Function
   - [X] Pointer
-** TODO Day 3 [100%]
+** DONE Day 3 [100%]
   SCHEDULED: <2023-01-26 Thu>
   - [X] Sorting
   - [X] Searching
