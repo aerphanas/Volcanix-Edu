@@ -21,6 +21,6 @@ Back-end with Java log from Kawah Edukasi batch 6
   SCHEDULED: <2023-01-26 Thu>
   - [X] Sorting
   - [X] Searching
-** TODO Day 4 [0%]
+** DONE Day 4 [100%]
   SCHEDULED: <2023-01-27 Fri>
-  - [ ] File Processing
+  - [X] File Processing
