@@ -1,6 +1,6 @@
 #+TITLE: Volcanix Edu
 
-Back-end with Java log from Kawah Edukasi batch 6
+Back-end with Java
 
 * Week 1
 ** DONE Day 1 [100%]
