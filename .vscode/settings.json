@@ -1,10 +1,12 @@
 {
   "java.project.sourcePaths": [
     "Playground/filehandling/src/main/java/com/example",
+    "Playground",
+    "Jan/27-jan",
     "Jan/26-jan",
     "Jan/25-jan",
     "Jan/24-jan",
-    "Jan/27-jan"
+    "assignment/week-1"
   ],
   "java.debug.settings.onBuildFailureProceed": true
 }
