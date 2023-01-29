@@ -93,12 +93,15 @@ public class Main {
             break;
         }
       } catch (IOException e) {
+        System.out.println("error saat membuka file");
+        e.printStackTrace();
       }
 
       // pattern match menu apa yang dipilih
 
     } catch (InputMismatchException e) {
       System.out.println("harap masukan angka");
+      e.printStackTrace();
     }
   }
   public static void printMenu(){
