@@ -39,7 +39,7 @@ public class Main {
       
       try {
         // inisialisasi untuk file log
-        FileWriter log = new FileWriter("log.txt");
+        FileWriter log = new FileWriter("result.txt");
         // pattern match menu apa yang dipilih
         switch (numMenu) {
 
