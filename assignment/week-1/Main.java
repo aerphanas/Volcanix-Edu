@@ -49,7 +49,12 @@ public class Main {
                               , bilPertama
                               , bilKedua
                               , bilPertama + bilKedua);
-            log.write("hasil dari " + bilPertama + " + " + bilKedua +" adalah " + bilPertama + bilKedua);
+            log.write("hasil dari "
+                      + bilPertama
+                      + " + " 
+                      + bilKedua 
+                      + " adalah "
+                      + bilPertama + bilKedua);
             log.close();
             break;
 
@@ -59,7 +64,12 @@ public class Main {
                               , bilPertama
                               , bilKedua
                               , bilPertama - bilKedua);
-            log.write("hasil dari " + bilPertama + " - " + bilKedua +" adalah " + bilPertama + bilKedua);
+            log.write("hasil dari "
+                      + bilPertama
+                      + " - "
+                      + bilKedua
+                      + " adalah "
+                      + bilPertama + bilKedua);
             log.close();
             break;
 
@@ -69,7 +79,12 @@ public class Main {
                               , bilPertama
                               , bilKedua
                               , bilPertama * bilKedua);
-            log.write("hasil dari " + bilPertama + " * " + bilKedua +" adalah " + bilPertama + bilKedua);
+            log.write("hasil dari "
+                      + bilPertama
+                      + " * "
+                      + bilKedua
+                      + " adalah "
+                      + bilPertama + bilKedua);
             log.close();
             break;
 
@@ -83,7 +98,12 @@ public class Main {
                                 , bilPertama
                                 , bilKedua
                                 , bilPertama / bilKedua);
-              log.write("hasil dari " + bilPertama + " / " + bilKedua +" adalah " + bilPertama + bilKedua);
+              log.write("hasil dari "
+                        + bilPertama
+                        + " / "
+                        + bilKedua
+                        + " adalah "
+                        + bilPertama + bilKedua);
               log.close();
             }
             break;
@@ -94,12 +114,17 @@ public class Main {
                               , bilPertama
                               , bilKedua
                               , bilPertama % bilKedua);
-            log.write("hasil dari " + bilPertama + " % " + bilKedua +" adalah " + bilPertama + bilKedua);
+            log.write("hasil dari "
+                      + bilPertama
+                      + " % "
+                      + bilKedua
+                      + " adalah "
+                      + bilPertama + bilKedua);
             log.close();
             break;
         
           default:
-            System.out.println("terjadi error saat pattern matching");
+            System.out.println("error saat pattern matching");
             log.write("error saat pattern match");
             log.close();
             break;
