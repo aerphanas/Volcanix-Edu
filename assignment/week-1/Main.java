@@ -18,6 +18,7 @@ public class Main {
     // untuk menyaring input hanya untuk tipe int
     try (Scanner inputUser = new Scanner(System.in)) {
 
+      // menampilkan menu
       printMenu();
 
       // inisialisasi variable
@@ -45,81 +46,41 @@ public class Main {
 
           // bila operator adalah +
           case 1:
-            System.out.printf("hasil dari %d + %d adalah %d \n"
-                              , bilPertama
-                              , bilKedua
-                              , bilPertama + bilKedua);
-            log.write("hasil dari "
-                      + bilPertama
-                      + " + " 
-                      + bilKedua 
-                      + " adalah "
-                      + bilPertama + bilKedua);
+            System.out.println(result(bilPertama, bilKedua, '+'));
+            log.write(result(bilPertama, bilKedua, '+'));
             log.close();
             break;
 
           // bila operator adalah -
           case 2:
-            System.out.printf("hasil dari %d - %d adalah %d \n"
-                              , bilPertama
-                              , bilKedua
-                              , bilPertama - bilKedua);
-            log.write("hasil dari "
-                      + bilPertama
-                      + " - "
-                      + bilKedua
-                      + " adalah "
-                      + bilPertama + bilKedua);
+            System.out.println(result(bilPertama, bilKedua, '-'));
+            log.write(result(bilPertama, bilKedua, '-'));
             log.close();
             break;
 
           // bila operator adalah *
           case 3:
-            System.out.printf("hasil dari %d * %d adalah %d \n"
-                              , bilPertama
-                              , bilKedua
-                              , bilPertama * bilKedua);
-            log.write("hasil dari "
-                      + bilPertama
-                      + " * "
-                      + bilKedua
-                      + " adalah "
-                      + bilPertama + bilKedua);
+            System.out.println(result(bilPertama, bilKedua, '*'));
+            log.write(result(bilPertama, bilKedua, '*'));
             log.close();
             break;
 
           // bila operator adalah /
           case 4:
             // untuk mengecek apakah yang dibagi adalah 0
-            if (bilKedua == 0) {
+            if (bilKedua == 0)
               System.out.println("tidak bisa dibagi dengan 0");
-            } else {
-              System.out.printf("hasil dari %d / %d adalah %d \n"
-                                , bilPertama
-                                , bilKedua
-                                , bilPertama / bilKedua);
-              log.write("hasil dari "
-                        + bilPertama
-                        + " / "
-                        + bilKedua
-                        + " adalah "
-                        + bilPertama + bilKedua);
+            else {
+              System.out.println(result(bilPertama, bilKedua, '/'));
+              log.write(result(bilPertama, bilKedua, '/'));
               log.close();
             }
             break;
 
           // bila operator adalah %
           case 5:
-            System.out.printf("hasil dari %d %% %d adalah %d \n"
-                              , bilPertama
-                              , bilKedua
-                              , bilPertama % bilKedua);
-            log.write("hasil dari "
-                      + bilPertama
-                      + " % "
-                      + bilKedua
-                      + " adalah "
-                      + bilPertama + bilKedua);
+            System.out.println(result(bilPertama, bilKedua, '%'));
+            log.write(result(bilPertama, bilKedua, '%'));
             log.close();
             break;
         
@@ -140,6 +101,8 @@ public class Main {
     }
   }
 
+  // fungsi menu yang akan ditampilkan 
+  // saat program berjalan pertamakali
   public static void printMenu(){
     System.out.println("Calculator Menu :");
     System.out.println("1. penjumlahan");
@@ -148,6 +111,17 @@ public class Main {
     System.out.println("4. pembagian");
     System.out.println("5. sisa bagi");
     System.out.print("Silakan masukan nomor : ");
+  }
+
+  // agar tidak mengulang menulis kode
+  // maka saya buat sebuah fungsi
+  public static String result(int bilPertama, int bilKedua, char operasi){
+    return "hasil dari "
+          + bilPertama
+          + " " + operasi + " "
+          + bilKedua
+          + " adalah "
+          + (bilPertama + bilKedua);
   }
 
 }
