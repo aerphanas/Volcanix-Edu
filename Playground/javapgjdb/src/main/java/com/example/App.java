@@ -14,7 +14,10 @@ public class App
         Connection c = null;
         try {
             Class.forName("org.postgresql.Driver");
-            c = DriverManager.getConnection("jdbc:postgresql://"+ host +":5432/" + database, user, password);
+            c = DriverManager.getConnection("jdbc:postgresql://"
+                                            + host
+                                            + ":5432/"
+                                            + database, user, password);
             System.out.println("Opened database successfully");
             c.close();
         } catch ( Exception e ) {
