@@ -4,23 +4,31 @@ Back-end with Java
 
 * Week 1
 ** DONE Day 1 [100%]
-  SCHEDULED: <2023-01-24 Tue>
-  - [X] Input & Output
-  - [X] Variable
-  - [X] Aritmatic
-  - [X] Operator
-  - [X] Selection
+   SCHEDULED: <2023-01-24 Tue>
+   - [X] Input & Output
+   - [X] Variable
+   - [X] Aritmatic
+   - [X] Operator
+   - [X] Selection
 
 ** DONE Day 2 [100%]
-  SCHEDULED: <2023-01-25 Wed>
-  - [X] Looping
-  - [X] Array
-  - [X] Function
-  - [X] Pointer
+   SCHEDULED: <2023-01-25 Wed>
+   - [X] Looping
+   - [X] Array
+   - [X] Function
+   - [X] Pointer
 ** DONE Day 3 [100%]
-  SCHEDULED: <2023-01-26 Thu>
-  - [X] Sorting
-  - [X] Searching
+   SCHEDULED: <2023-01-26 Thu>
+   - [X] Sorting
+   - [X] Searching
 ** DONE Day 4 [100%]
-  SCHEDULED: <2023-01-27 Fri>
-  - [X] File Processing
+   SCHEDULED: <2023-01-27 Fri>
+   - [X] File Processing
+
+* Week 2
+** TODO Day 1 [0%]
+   SCHEDULED: <2023-01-30 Mon>
+   - [ ] Basic Query
+** TODO Day 2 [0%]
+   SCHEDULED: <2023-01-31 Tue>
+   - [ ] Basic Query
