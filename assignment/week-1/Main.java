@@ -24,6 +24,8 @@ public class Main {
       // inisialisasi variable
       int numMenu = inputUser.nextInt();
       int bilPertama, bilKedua;
+      String fileName = "result.txt";
+      String hasil = null;
 
       // bila input ada yang salah maka program akan
       // menanyakan nomor sampai benar
@@ -38,65 +40,57 @@ public class Main {
       System.out.print("Masukan bilangan kedua   : ");
       bilKedua = inputUser.nextInt();
       
-      try {
-        // inisialisasi untuk file log
-        FileWriter log = new FileWriter("result.txt");
-        // pattern match menu apa yang dipilih
-        switch (numMenu) {
+      // pattern match menu apa yang dipilih
+      switch (numMenu) {
 
-          // bila operator adalah +
-          case 1:
-            System.out.println(result(bilPertama, bilKedua, '+'));
-            log.write(result(bilPertama, bilKedua, '+'));
-            log.close();
-            break;
+        // bila operator adalah +
+        case 1:
+          hasil = result(bilPertama, bilKedua, '+');
+          System.out.println(hasil);
+          writeToFile(fileName, hasil);
+          break;
 
-          // bila operator adalah -
-          case 2:
-            System.out.println(result(bilPertama, bilKedua, '-'));
-            log.write(result(bilPertama, bilKedua, '-'));
-            log.close();
-            break;
+        // bila operator adalah -
+        case 2:
+          hasil = result(bilPertama, bilKedua, '-');
+          System.out.println(hasil);
+          writeToFile(fileName, hasil);
+          break;
 
-          // bila operator adalah *
-          case 3:
-            System.out.println(result(bilPertama, bilKedua, '*'));
-            log.write(result(bilPertama, bilKedua, '*'));
-            log.close();
-            break;
+        // bila operator adalah *
+        case 3:
+          hasil = result(bilPertama, bilKedua, '*');
+          System.out.println(hasil);
+          writeToFile(fileName, hasil);
+          break;
 
-          // bila operator adalah /
-          case 4:
-            // untuk mengecek apakah yang dibagi adalah 0
-            if (bilKedua == 0)
-              System.out.println("tidak bisa dibagi dengan 0");
-            else {
-              System.out.println(result(bilPertama, bilKedua, '/'));
-              log.write(result(bilPertama, bilKedua, '/'));
-              log.close();
-            }
-            break;
+        // bila operator adalah /
+        case 4:
+          // untuk mengecek apakah yang dibagi adalah 0
+          if (bilKedua == 0)
+            System.out.println("Error : Tidak bisa dibagi dengan 0");
+          else {
+            hasil = result(bilPertama, bilKedua, '/');
+            System.out.println(hasil);
+            writeToFile(fileName, hasil);
+          }
+          break;
 
-          // bila operator adalah %
-          case 5:
-            System.out.println(result(bilPertama, bilKedua, '%'));
-            log.write(result(bilPertama, bilKedua, '%'));
-            log.close();
-            break;
-        
-          default:
-            System.out.println("error saat pattern matching");
-            log.write("error saat pattern match");
-            log.close();
-            break;
-        }
-      } catch (IOException e) {
-        System.out.println("error saat membuka file");
-        e.printStackTrace();
+        // bila operator adalah %
+        case 5:
+          hasil = result(bilPertama, bilKedua, '%');
+          System.out.println(hasil);
+          writeToFile(fileName, hasil);
+          break;
+      
+        // untuk berjaga-jaga
+        default:
+          System.out.println("Error : Tolong jalankan ulang");
+          break;
       }
 
     } catch (InputMismatchException e) {
-      System.out.println("harap masukan angka");
+      System.out.println("Error : Tolong masukan angka");
       e.printStackTrace();
     }
   }
@@ -105,23 +99,53 @@ public class Main {
   // saat program berjalan pertamakali
   public static void printMenu(){
     System.out.println("Calculator Menu :");
-    System.out.println("1. penjumlahan");
-    System.out.println("2. pengurangan");
-    System.out.println("3. perkalian");
-    System.out.println("4. pembagian");
-    System.out.println("5. sisa bagi");
-    System.out.print("Silakan masukan nomor : ");
+    System.out.println("1. Penjumlahan");
+    System.out.println("2. Pengurangan");
+    System.out.println("3. Perkalian");
+    System.out.println("4. Pembagian");
+    System.out.println("5. Sisa bagi");
+    System.out.print("Silakan Masukan Nomor : ");
   }
 
   // agar tidak mengulang menulis kode
   // maka saya buat sebuah fungsi
   public static String result(int bilPertama, int bilKedua, char operasi){
+    int penjumlahan = 0;
+    switch (operasi) {
+      case '+':
+        penjumlahan = bilPertama + bilKedua;
+        break;
+      case '-':
+        penjumlahan = bilPertama - bilKedua;
+        break;
+      case '*':
+        penjumlahan = bilPertama * bilKedua;
+        break;
+      case '/':
+        penjumlahan = bilPertama / bilKedua;
+        break;
+      case '%':
+        penjumlahan = bilPertama % bilKedua;
+        break;
+    }
     return "hasil dari "
           + bilPertama
           + " " + operasi + " "
           + bilKedua
           + " adalah "
-          + (bilPertama + bilKedua);
+          + penjumlahan;
+  }
+
+  // fungsi untuk menulis output ke file
+  public static void writeToFile(String filename, String inside){
+    try {
+      FileWriter myFile = new FileWriter(filename);
+      myFile.write(inside);
+      myFile.close();
+    } catch (IOException e) {
+      System.out.println("Error : Membuat File Gagal");
+      e.printStackTrace();
+    }
   }
 
 }
