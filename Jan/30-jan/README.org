@@ -108,3 +108,6 @@ systemd:
 #+BEGIN_SRC
 systemctl restart postgresql
 #+END_SRC
+* Further read
+  - [[https://phoenixnap.com/kb/postgres-create-user][How to create user PostgreSQL]]
+  - [[https://www.w3schools.com/sql/default.asp][w3school sql tuts]]
