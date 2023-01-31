@@ -42,10 +42,53 @@ SELECT version();
 CREATE USER useaname;
 #+END_SRC
 
+* add superuser
+
+#+BEGIN_SRC sql
+CREATE USER username SUPERUSER;
+#+END_SRC
+
+* add user with privilages
+
+| option           | privilages                | description                                                            |
+|------------------+---------------------------+------------------------------------------------------------------------|
+| -s               | SUPERUSER                 | Add the superuser privilege                                            |
+| -S               | NOSUPERUSER               | No superuser privilege (default)                                       |
+| -d               | CREATEDB                  | Allow the user to create database                                      |
+| -D               | NOCREATEDB                | Not allowed to create databases (default)                              |
+| -r               | CREATEROLE                | Allows the user to make new roles                                      |
+| -R               | NOCREATEROLE              | Not allowed to create roles (default)                                  |
+| -i               | INHERIT                   | Automatically inherit the privileges of roles (default)                |
+| -I               | NOINHERIT                 | Do not inherit privileges of roles                                     |
+| -l               | LOGIN                     | Allow the user to log into a session with the role name (default)      |
+| -L               | NOLOGIN                   | Not allowed to log into a session with the role name                   |
+| --replication    | REPLICATION               | Allow initiating streaming replication and de/activating backup mode   |
+| --no-replication | NOREPLICATION             | Not allowed to initiate streaming replication or backup mode (default) |
+| -p               | PASSWORD '<password>'     | Initiates password creation prompt                                     |
+| /                | PASSWORD NULL             | Set passwod to null                                                    |
+| -c               | CONNECTION LIMIT <number> | Set connection for user                                                |
+
+
+#+BEGIN_SRC sql
+CREATE USER username WITH privilages;
+#+END_SRC
+
+* Grant all privilages on specific database to user
+
+#+BEGIN_SRC sql
+GRANT ALL PRIVILEGES ON DATABASE databasename TO username;
+#+END_SRC
+
 * Change Password
 
 #+BEGIN_SRC sql
 ALTER USER username WITH password 'password';
+#+END_SRC
+
+or
+
+#+BEGIN_SRC sh
+sudo -u postgres createuser username --pwprompt
 #+END_SRC
 
 * Remote Connection
