@@ -125,14 +125,14 @@ public class Main {
 
     // kondisi untuk mengecek apakah hasil
     // merupakan hasil bagi atau penjumlahan biasa
-    if (hasilbagi == 0) {
+    if (hasilbagi == 0.0f) {
       return "hasil dari "
             + bilPertama
             + " " + operasi + " "
             + bilKedua
             + " adalah "
             + penjumlahan;
-    } else if (penjumlahan == 0.0) {
+    } else if (penjumlahan == 0) {
       return "hasil dari "
             + bilPertama
             + " " + operasi + " "
