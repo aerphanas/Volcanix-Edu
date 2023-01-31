@@ -5,6 +5,10 @@
  * 2. Kemudian user akan diminta untuk memasukkan dua buah bilangan,
  *    lalu akan tercetak ke layar hasil dari operasi dua bilangan tersebut sesuai menu yang dipilih
  *    dan setelahnya akan menyimpan hasil dalam bentuk result.txt
+ * 
+ * calculator bisa saja di optimisasi dengan mengimput string lalu di
+ * parsing manual, tetapi akan menghilankan kata simpel dari kode maka saya
+ * membiarkanya seperti ini, dan ini adalah kode final saya
  */
 
 import java.io.FileWriter;
