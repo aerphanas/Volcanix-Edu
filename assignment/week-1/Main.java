@@ -24,7 +24,6 @@ public class Main {
       // inisialisasi variable
       int numMenu = inputUser.nextInt();
       int bilPertama, bilKedua;
-      String fileName = "result.txt";
       String hasil = null;
 
       // bila input ada yang salah maka program akan
@@ -76,7 +75,7 @@ public class Main {
 
       // print hasil dan menyimpanya ke file result.txt
       System.out.println(hasil);
-      writeToFile(fileName, hasil);
+      writeToFile(hasil);
 
     } catch (InputMismatchException e) {
       System.out.println("Error : Tolong masukan angka");
@@ -126,9 +125,9 @@ public class Main {
   }
 
   // fungsi untuk menulis output ke file
-  public static void writeToFile(String filename, String inside){
+  public static void writeToFile(String inside){
     try {
-      FileWriter myFile = new FileWriter(filename);
+      FileWriter myFile = new FileWriter("result.txt");
       myFile.write(inside);
       myFile.close();
     } catch (IOException e) {
