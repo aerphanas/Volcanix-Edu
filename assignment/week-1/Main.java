@@ -22,7 +22,9 @@ public class Main {
       printMenu();
 
       // inisialisasi variable
-      int numMenu = inputUser.nextInt();
+      // tidak perlu tipe data int karna hanya
+      // memilih dari 1 sampai 5
+      byte numMenu = inputUser.nextByte();
       int bilPertama, bilKedua;
       String hasil = null;
 
@@ -30,7 +32,7 @@ public class Main {
       // menanyakan nomor sampai benar
       while (numMenu > 5 || numMenu == 0 ) {
         printMenu();
-        numMenu = inputUser.nextInt();
+        numMenu = inputUser.nextByte();
       }
       
       // mengambil bilangan
@@ -99,6 +101,10 @@ public class Main {
   // maka saya buat sebuah fungsi
   public static String result(int bilPertama, int bilKedua, char operasi){
     int penjumlahan = 0;
+    // karna hasil bagi bisa menjadi koma
+    // maka saya menggunakan tipe data float
+    // sehingga bila 22 / 7 = 3.142857
+    float hasilbagi = 0.0f;
     switch (operasi) {
       case '+':
         penjumlahan = bilPertama + bilKedua;
@@ -110,18 +116,31 @@ public class Main {
         penjumlahan = bilPertama * bilKedua;
         break;
       case '/':
-        penjumlahan = bilPertama / bilKedua;
+        hasilbagi = (float) bilPertama / (float) bilKedua;
         break;
       case '%':
         penjumlahan = bilPertama % bilKedua;
         break;
     }
-    return "hasil dari "
-          + bilPertama
-          + " " + operasi + " "
-          + bilKedua
-          + " adalah "
-          + penjumlahan;
+
+    // kondisi untuk mengecek apakah hasil
+    // merupakan hasil bagi atau penjumlahan biasa
+    if (hasilbagi == 0) {
+      return "hasil dari "
+            + bilPertama
+            + " " + operasi + " "
+            + bilKedua
+            + " adalah "
+            + penjumlahan;
+    } else if (penjumlahan == 0.0) {
+      return "hasil dari "
+            + bilPertama
+            + " " + operasi + " "
+            + bilKedua
+            + " adalah "
+            + hasilbagi;
+    } else 
+      return "Error : Gagal dalam menghitung bilangan";
   }
 
   // fungsi untuk menulis output ke file
