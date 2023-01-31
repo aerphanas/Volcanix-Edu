@@ -29,6 +29,6 @@ Back-end with Java
 ** DONE Day 1 [100%]
    SCHEDULED: <2023-01-30 Mon>
    - [X] Basic Query PostgreSQL
-** TODO Day 2 [0%]
+** DONE Day 2 [100%]
    SCHEDULED: <2023-01-31 Tue>
-   - [ ] Basic Query PostgreSQL
+   - [X] Basic Query PostgreSQL
