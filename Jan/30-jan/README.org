@@ -1,0 +1,61 @@
+#+TITLE Installing postgresql on Linux
+
+* Debian GNU/Linux
+
+#+BEGIN_SRC sh
+apt install postgresql
+#+END_SRC
+
+debian configuration is on /etc/postgresql/13/main/
+
+* RHEL9/RL9/AL9
+
+#+BEGIN_SRC sh
+dnf install postgresql-server
+# and then
+postgresql-setup --initdb
+#+END_SRC
+
+RHEL9 configuration is on /var/lib/pgsql/data/
+
+* Login as postgres user and run psql from another user
+
+#+BEGIN_SRC sh
+sudo -i -u postgres psql
+#+END_SRC
+
+* Get Configuration Path
+
+#+BEGIN_SRC sql
+SHOW config_file;
+#+END_SRC
+
+* Get Version
+
+#+BEGIN_SRC sql
+SELECT version();
+#+END_SRC
+
+* Change Password
+
+#+BEGIN_SRC sql
+alter user username with password 'password';
+#+END_SRC
+
+* Remote Connection
+
+find where configuration path
+
+edit postgresql.conf
+change listen_addresses = 'localhost'
+    to listen_addresses = '*'
+
+add pg_hba.conf
+host all all all md5
+
+restart postgresgl
+
+systemd:
+#+BEGIN_SRC
+systemctl restart postgresql
+#+END_SRC
