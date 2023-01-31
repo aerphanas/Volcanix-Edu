@@ -36,6 +36,12 @@ SHOW config_file;
 SELECT version();
 #+END_SRC
 
+* add new user
+
+#+BEGIN_SRC sql
+CREATE USER useaname;
+#+END_SRC
+
 * Change Password
 
 #+BEGIN_SRC sql
