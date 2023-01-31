@@ -39,7 +39,7 @@ SELECT version();
 * Change Password
 
 #+BEGIN_SRC sql
-alter user username with password 'password';
+ALTER USER username WITH password 'password';
 #+END_SRC
 
 * Remote Connection
