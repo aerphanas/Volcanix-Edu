@@ -46,22 +46,16 @@ public class Main {
         // bila operator adalah +
         case 1:
           hasil = result(bilPertama, bilKedua, '+');
-          System.out.println(hasil);
-          writeToFile(fileName, hasil);
           break;
 
         // bila operator adalah -
         case 2:
           hasil = result(bilPertama, bilKedua, '-');
-          System.out.println(hasil);
-          writeToFile(fileName, hasil);
           break;
 
         // bila operator adalah *
         case 3:
           hasil = result(bilPertama, bilKedua, '*');
-          System.out.println(hasil);
-          writeToFile(fileName, hasil);
           break;
 
         // bila operator adalah /
@@ -69,25 +63,20 @@ public class Main {
           // untuk mengecek apakah yang dibagi adalah 0
           if (bilKedua == 0)
             System.out.println("Error : Tidak bisa dibagi dengan 0");
-          else {
+          else
             hasil = result(bilPertama, bilKedua, '/');
-            System.out.println(hasil);
-            writeToFile(fileName, hasil);
-          }
           break;
 
         // bila operator adalah %
         case 5:
           hasil = result(bilPertama, bilKedua, '%');
-          System.out.println(hasil);
-          writeToFile(fileName, hasil);
           break;
-      
-        // untuk berjaga-jaga
-        default:
-          System.out.println("Error : Tolong jalankan ulang");
-          break;
+
       }
+
+      // print hasil dan menyimpanya ke file result.txt
+      System.out.println(hasil);
+      writeToFile(fileName, hasil);
 
     } catch (InputMismatchException e) {
       System.out.println("Error : Tolong masukan angka");
