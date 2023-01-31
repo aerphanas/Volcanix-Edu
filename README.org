@@ -26,9 +26,9 @@ Back-end with Java
    - [X] File Processing
 
 * Week 2
-** TODO Day 1 [0%]
+** DONE Day 1 [100%]
    SCHEDULED: <2023-01-30 Mon>
-   - [ ] Basic Query PostgreSQL
+   - [X] Basic Query PostgreSQL
 ** TODO Day 2 [0%]
    SCHEDULED: <2023-01-31 Tue>
    - [ ] Basic Query PostgreSQL
