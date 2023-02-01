@@ -14,3 +14,22 @@ generate ER Diagram with DBeaver
 * Useful Link
   - [[https://www.visual-paradigm.com/guide/data-modeling/what-is-entity-relationship-diagram/;WWWSESSIONID=AC83402241AE48647CFED490288FC234.www1][What is Entity Relationship Diagram (ERD)?]]
   - [[https://www.databasestar.com/entity-relationship-diagram][A Guide to the Entity Relationship Diagram (ERD)]]
+* Create Relationship/Foreign keys
+
+#+BEGIN_SRC sql
+-- create table to users schema
+CREATE TABLE users.products (
+product_id INT PRIMARY KEY NOT NULL,
+product_name VARCHAR(125) NOT NULL,
+product_price NUMERIC
+);
+
+-- create relation with references statement
+CREATE TABLE users.orders (
+order_id INT PRIMARY KEY NOT NULL,
+product_no INT REFERENCES users.products (product_id),
+quantity INT
+);
+#+END_SRC
+
+[[file:media/kawahedu-users-products.png][result]]
