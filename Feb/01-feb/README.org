@@ -32,4 +32,4 @@ quantity INT
 );
 #+END_SRC
 
-[[file:media/kawahedu-users-products.png][result]]
+[[file:media/kawahedu-users-products.png]]
