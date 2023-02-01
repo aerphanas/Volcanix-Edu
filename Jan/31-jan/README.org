@@ -12,6 +12,7 @@ sudo -i -u postgres psql
 \? -- show all command
 \l -- list all database
 \c -- connect to database
+\i file.sql -- execute file.sql script
 \d users.persons -- show table info of persons on users schema
 \du -- list all user
 \dt -- list all table
@@ -55,3 +56,53 @@ VALUES (1, 'Burhanudin', 'Muhammad Aviv', 'indonesia', 'jakarta timur');
 #+BEGIN_SRC sql
 SELECT * FROM users.persons;
 #+END_SRC
+* Data Type
+
+| Name      | Aliases | Description                         |
+|-----------+---------+-------------------------------------|
+| bigint    | int8    | signed eight-byte integer           |
+| bigserial | serial8 | autoincrementing eight-byte integer |
+|           |         |                                     |
+|           |         |                                     |
+|           |         |                                     |
+|           |         |                                     |
+|           |         |                                     |
+|           |         |                                     |
+|           |         |                                     |
+|           |         |                                     |
+|           |         |                                     |
+|           |         |                                     |
+|           |         |                                     |
+|           |         |                                     |
+|           |         |                                     |
+|           |         |                                     |
+|           |         |                                     |
+|           |         |                                     |
+|           |         |                                     |
+|           |         |                                     |
+|           |         |                                     |
+|           |         |                                     |
+|           |         |                                     |
+|           |         |                                     |
+|           |         |                                     |
+|           |         |                                     |
+|           |         |                                     |
+|           |         |                                     |
+|           |         |                                     |
+|           |         |                                     |
+|           |         |                                     |
+|           |         |                                     |
+|           |         |                                     |
+|           |         |                                     |
+|           |         |                                     |
+|           |         |                                     |
+|           |         |                                     |
+|           |         |                                     |
+|           |         |                                     |
+|           |         |                                     |
+|           |         |                                     |
+|           |         |                                     |
+|           |         |                                     |
+|           |         |                                     |
+
+[[https://www.postgresql.org/docs/current/datatype.html][postgresql datatype]]
