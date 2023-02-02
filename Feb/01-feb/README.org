@@ -14,6 +14,7 @@ generate ER Diagram with DBeaver
 * Useful Link
   - [[https://www.visual-paradigm.com/guide/data-modeling/what-is-entity-relationship-diagram/;WWWSESSIONID=AC83402241AE48647CFED490288FC234.www1][What is Entity Relationship Diagram (ERD)?]]
   - [[https://www.databasestar.com/entity-relationship-diagram][A Guide to the Entity Relationship Diagram (ERD)]]
+  - [[https://dbeaver.com/2022/06/30/two-ways-to-use-erd-in-dbeaver/][Two ways to use ERD in DBeaver]]
 * Create Relationship/Foreign keys
 
 #+BEGIN_SRC sql
