@@ -51,58 +51,40 @@ INSERT INTO users.persons (personid, lastname, firstname, address, city)
 VALUES (1, 'Burhanudin', 'Muhammad Aviv', 'indonesia', 'jakarta timur');
 #+END_SRC
 
-* Show table value
+* Delete table
 
+#+BEGIN_SRC sql
+DROP TABLE users.persons;
+#+END_SRC
+
+* Data Type
+[[https://www.postgresql.org/docs/current/datatype.html][postgresql datatype]]
+
+* Show table value
 #+BEGIN_SRC sql
 SELECT * FROM users.persons;
 #+END_SRC
-* Data Type
 
-| Name      | Aliases | Description                         |
-|-----------+---------+-------------------------------------|
-| bigint    | int8    | signed eight-byte integer           |
-| bigserial | serial8 | autoincrementing eight-byte integer |
-|           |         |                                     |
-|           |         |                                     |
-|           |         |                                     |
-|           |         |                                     |
-|           |         |                                     |
-|           |         |                                     |
-|           |         |                                     |
-|           |         |                                     |
-|           |         |                                     |
-|           |         |                                     |
-|           |         |                                     |
-|           |         |                                     |
-|           |         |                                     |
-|           |         |                                     |
-|           |         |                                     |
-|           |         |                                     |
-|           |         |                                     |
-|           |         |                                     |
-|           |         |                                     |
-|           |         |                                     |
-|           |         |                                     |
-|           |         |                                     |
-|           |         |                                     |
-|           |         |                                     |
-|           |         |                                     |
-|           |         |                                     |
-|           |         |                                     |
-|           |         |                                     |
-|           |         |                                     |
-|           |         |                                     |
-|           |         |                                     |
-|           |         |                                     |
-|           |         |                                     |
-|           |         |                                     |
-|           |         |                                     |
-|           |         |                                     |
-|           |         |                                     |
-|           |         |                                     |
-|           |         |                                     |
-|           |         |                                     |
-|           |         |                                     |
-|           |         |                                     |
+* SQL Statement
 
-[[https://www.postgresql.org/docs/current/datatype.html][postgresql datatype]]
+| statement             | desription                                              |
+|-----------------------+---------------------------------------------------------|
+| select                | select data from database                               |
+| select distinct       | remove duplicate rows from a result se                  |
+| where                 | filter records                                          |
+| and, or, not          | logic operator                                          |
+| order by .. asc/desc  | sort result                                             |
+| insert into .. values | insert new record table                                 |
+| update .. set         | update record                                           |
+| delete from .. where  | delete record                                           |
+| min() max()           | sql function                                            |
+| count() avg() sum()   | sql function                                            |
+| join                  | combine 1/2 table                                       |
+| union                 | combine the result-set of two or more SELECT statements |
+| alter table           | add, delete, or modify columns in an existing table     |
+| limit                 | limit select statement                                  |
+| offset                | start at                                                |
+
+* SQL operators
+
+[[https://www.w3schools.com/sql/sql_operators.asp][w3s sql operators]]
