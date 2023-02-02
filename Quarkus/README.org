@@ -1,0 +1,6 @@
+#+TITLE: Quarkus comming soon...
+
+* Useful ebook from Redhat Devel
+  - [[https://developers.redhat.com/e-books/quarkus-cookbook][Quarkus cookbook]]
+  - [[https://developers.redhat.com/e-books/practising-quarkus][Practising Quarkus]]
+  - [[https://developers.redhat.com/e-books/kubernetes-native-microservices-quarkus-and-microprofile][Kubernetes Native Microservices with Quarkus and MicroProfile]]
