@@ -31,10 +31,10 @@ Original Answer Link : [[https://stackoverflow.com/questions/33781451/crows-feet
 
 Penjabaran :
 
-- Web Login
+- Web Login :
   satu dan hanya satu buah username yang dibolehkan ada di Twitter dan sebaliknya
 
-- Kos-kosan
+- Kos-kosan :
   Seorang yang sudah memiliki KTP dapat menyewa sebuah kos-kosan dan ketika sudah selesai masa sewa orang lain siapapun dapat menyewanya dan sebaliknya
 
 * Create Relationship/Foreign keys
