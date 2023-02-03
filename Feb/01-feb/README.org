@@ -23,6 +23,20 @@ Line Symbol dalam ERD
   - [[https://dbeaver.com/2022/06/30/two-ways-to-use-erd-in-dbeaver/][Two ways to use ERD in DBeaver]]
   - [[https://www.youtube.com/watch?v=QpdhBUYk7Kk][Entity Relationship Diagram (ERD) Tutorial - Part 1]]
   - [[https://www.youtube.com/watch?v=-CuY5ADwn24][Entity Relationship Diagram (ERD) Tutorial - Part 2]]
+* Perbedaan One dan One (and only one)
+
+Original Answer Link : [[https://stackoverflow.com/questions/33781451/crows-feet-one-vs-one-and-only-one][Crow's Feet - One vs One And Only One]]
+
+[[file:media/one-vs-one-the-onlyone.png]]
+
+Penjabaran :
+
+- Web Login
+  satu dan hanya satu buah username yang dibolehkan ada di Twitter dan sebaliknya
+
+- Kos-kosan
+  Seorang yang sudah memiliki KTP dapat menyewa sebuah kos-kosan dan ketika sudah selesai masa sewa orang lain siapapun dapat menyewanya dan sebaliknya
+
 * Create Relationship/Foreign keys
 
 #+BEGIN_SRC sql
