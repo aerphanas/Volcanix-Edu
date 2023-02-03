@@ -11,10 +11,18 @@ When we talk about entities in ERD, very often we are referring to business obje
 [[https://cdn-images.visual-paradigm.com/guide/data-modeling/what-is-erd/02-er-diagram-depicts-business-entities-relationships.png]]
 
 generate ER Diagram with DBeaver
+* ERD Cardinality
+
+Line Symbol dalam ERD
+
+[[file:media/erd-cardinality.png]]
+
 * Useful Link
   - [[https://www.visual-paradigm.com/guide/data-modeling/what-is-entity-relationship-diagram/;WWWSESSIONID=AC83402241AE48647CFED490288FC234.www1][What is Entity Relationship Diagram (ERD)?]]
   - [[https://www.databasestar.com/entity-relationship-diagram][A Guide to the Entity Relationship Diagram (ERD)]]
   - [[https://dbeaver.com/2022/06/30/two-ways-to-use-erd-in-dbeaver/][Two ways to use ERD in DBeaver]]
+  - [[https://www.youtube.com/watch?v=QpdhBUYk7Kk][Entity Relationship Diagram (ERD) Tutorial - Part 1]]
+  - [[https://www.youtube.com/watch?v=-CuY5ADwn24][Entity Relationship Diagram (ERD) Tutorial - Part 2]]
 * Create Relationship/Foreign keys
 
 #+BEGIN_SRC sql
@@ -34,3 +42,10 @@ quantity INT
 #+END_SRC
 
 [[file:media/kawahedu-users-products.png]]
+* Contoh ERD Olshop
+
+[[file:media/erd-olshop.png]]
+
+penjabaranya adalah :
+
+seorang Customer bisa memiliki 0 atau lebih banyak, didalam order bisa memiliki 1 atau lebih produk dan produk bisa ada di Order 0 atau lebih banyak  
