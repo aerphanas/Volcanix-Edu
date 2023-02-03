@@ -48,4 +48,4 @@ quantity INT
 
 penjabaranya adalah :
 
-seorang Customer bisa memiliki 0 atau lebih banyak, didalam order bisa memiliki 1 atau lebih produk dan produk bisa ada di Order 0 atau lebih banyak  
+seorang Customer bisa memiliki 0 atau lebih banyak order, didalam order bisa memiliki 1 atau lebih produk dan produk bisa ada di Order dengan jumlah 0 atau lebih banyak  
