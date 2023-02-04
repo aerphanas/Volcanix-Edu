@@ -57,6 +57,15 @@ podman run --name postgres \
            docker.io/library/postgres:13
 #+END_SRC
 
+* PgAdmin container
+
+#+BEGIN_SRC sh
+docker run -p 8080:80 \
+    -e 'PGADMIN_DEFAULT_EMAIL=user@domain.com' \
+    -e 'PGADMIN_DEFAULT_PASSWORD=SuperSecret' \
+    -d dpage/pgadmin4
+#+END_SRC
+
 * Get Configuration Path
 
 #+BEGIN_SRC sql
