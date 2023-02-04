@@ -34,7 +34,7 @@ RHEL9 configuration is on /var/lib/pgsql/data/
 sudo -i -u postgres psql
 #+END_SRC
 
-* run psqlinside container
+* run psql inside container
 
 #+BEGIN_SRC sh
 podman exec -it postgres psql -U postgres
@@ -60,7 +60,7 @@ podman run --name postgres \
 * PgAdmin container
 
 #+BEGIN_SRC sh
-docker run -p 8080:80 \
+podman run -p 8080:80 \
     -e 'PGADMIN_DEFAULT_EMAIL=user@domain.com' \
     -e 'PGADMIN_DEFAULT_PASSWORD=SuperSecret' \
     -d dpage/pgadmin4
