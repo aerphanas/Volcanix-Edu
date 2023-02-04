@@ -8,6 +8,12 @@ apt install postgresql
 
 debian configuration is on /etc/postgresql/13/main/
 
+* Podman Container
+
+#+BEGIN_SRC sh
+podman run --name postgres -p 5432:5432 -e POSTGRES_PASSWORD=postgres -e POSTGRES_USER=postgres -d docker.io/library/postgres:13
+#+END_SRC
+
 * RHEL9/RL9/AL9
 
 #+BEGIN_SRC sh
