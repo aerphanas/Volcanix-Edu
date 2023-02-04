@@ -11,7 +11,11 @@ debian configuration is on /etc/postgresql/13/main/
 * Podman Container
 
 #+BEGIN_SRC sh
-podman run --name postgres -p 5432:5432 -e POSTGRES_PASSWORD=postgres -e POSTGRES_USER=postgres -d docker.io/library/postgres:13
+podman run --name postgres \
+           -p 5432:5432 \
+           -e POSTGRES_PASSWORD=postgres \
+           -e POSTGRES_USER=postgres \
+           -d docker.io/library/postgres:13
 #+END_SRC
 
 * RHEL9/RL9/AL9
@@ -30,10 +34,27 @@ RHEL9 configuration is on /var/lib/pgsql/data/
 sudo -i -u postgres psql
 #+END_SRC
 
-* run psql inside container
+* run psqlinside container
 
 #+BEGIN_SRC sh
 podman exec -it postgres psql -U postgres
+#+END_SRC
+
+* presistent Database Container
+
+- create volume
+#+BEGIN_SRC sh
+podman volume create dbpsql
+#+END_SRC
+- start container with volume bind to /var/lib/postgresql/data
+#+BEGIN_SRC sh
+podman run --name postgres \
+           -p 5432:5432 \
+           -e POSTGRES_PASSWORD=postgres \
+           -e POSTGRES_USER=postgres \
+           -e PGDATA=/var/lib/postgresql/data \
+           -dv dbpsql:/var/lib/postgresql/data \
+           docker.io/library/postgres:13
 #+END_SRC
 
 * Get Configuration Path
