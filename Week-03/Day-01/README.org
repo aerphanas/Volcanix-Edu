@@ -1,0 +1,11 @@
+#+TITLE: Exception
+
+* useful link
+  - [[https://programming.guide/java/list-of-java-exceptions.html][list of java exceptions]]
+
+* compile & run
+
+#+BEGIN_SRC bash
+javac Main.java
+java Main
+#+END_SRC
