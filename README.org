@@ -6,6 +6,7 @@ Back-end with Java
   - [[https://www.postgresql.org/docs/][PostgreSQL Documentation]]
   - [[https://docs.oracle.com/en/java/javase/11/docs/api/][Java JDK API Specification Documentation]]
   - [[https://mvnrepository.com/][Maven Repository]]
+
 * Week 1
 ** DONE Day 1 [100%]
    SCHEDULED: <2023-01-24 Tue>
@@ -21,10 +22,12 @@ Back-end with Java
    - [X] Array
    - [X] Function
    - [X] Pointer
+
 ** DONE Day 3 [100%]
    SCHEDULED: <2023-01-26 Thu>
    - [X] Sorting
    - [X] Searching
+
 ** DONE Day 4 [100%]
    SCHEDULED: <2023-01-27 Fri>
    - [X] File Processing
@@ -33,12 +36,32 @@ Back-end with Java
 ** DONE Day 1 [100%]
    SCHEDULED: <2023-01-30 Mon>
    - [X] Basic Query PostgreSQL
+
 ** DONE Day 2 [100%]
    SCHEDULED: <2023-01-31 Tue>
    - [X] Basic Query PostgreSQL
+
 ** DONE Day 3 [100%]
    SCHEDULED: <2023-02-01 Wed>
    - [X] ERD (Entity Relationship Diagram)
+
 ** DONE Day 4 [100%]
    SCHEDULED: <2023-02-02 Thu>
    - [X] Flowchart
+
+* Week 3
+** DONE Day 1 [100%]
+   SCHEDULED: <2023-02-03 Jum>
+   - [X] Exception
+
+** DONE Day 2 [100%]
+   SCHEDULED: <2023-02-06 Sen>
+   - [X] String Object
+
+** DONE Day 3 [100%]
+   SCHEDULED: <2023-02-07 Sel>
+   - [X] ArrayList & Vector
+
+** DONE Day 4 [100%]
+   SCHEDULED: <2023-02-08 Rab>
+   - [X] OOP
