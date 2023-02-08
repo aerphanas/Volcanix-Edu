@@ -1,0 +1,11 @@
+#+TITLE: Assigment week 2
+
+* Problem
+
+** Tugas database:
+  - Import postgres.zip
+  - Buatlah query sesuai soal pada file Tugas Database Movies.xlsx, sertakan query dan screenshoot data nya
+
+** Tugas Flowchart
+  - Buatlah flowchart program untuk menentukan input tahun adalah tahun kabisat atau bukan
+  - Buatlah flowchart untuk menampilkan bilangan yang habis di bagi 3 diantara 1 sampai dengan 100
