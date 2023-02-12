@@ -48,6 +48,24 @@ public class TugasOne {
         // membuat 2 variable boolean
         boolean var_bool_one,   var_bool_two;
 
+        // memberikan value untuk variable yang dibuat
+
+        // memberikan value ke tipe data short
+        var_short_one = 0;
+        var_short_two = 0;
+
+        // memberikan value ke tipe data double
+        var_double_one = 0.0;
+        var_double_two = 0.0;
+
+        // memberikan value ke tipe data char
+        var_char_one = '0';
+        var_char_two = '0';
+
+        // memberikan value ke tipe data boolean
+        var_bool_one = false;
+        var_bool_two = false;
+
         // =======================================================
         // tugas poin ketiga dari tugas minggu ke 3
         // * Buatlah 3 variable string dengan value masing-masing,
@@ -55,17 +73,18 @@ public class TugasOne {
         //   lalu gabungkan dan print hasilnya.
         // =======================================================
 
-        // membuuat String array untuk menampung 3 buah string
-        String values[] = { "Saya senang",
-                            "belajar",
-                            "Java Language"};
-        
-        // menggabungkan isi dari string array values ke variable baru
-        String cont_values = new String();
-        for (String val : values)
-            cont_values = cont_values.concat(val);
-        
+        // membuat 3 variable string dengan variable yang ditentukan
+        String var_one = "Saya senang";
+        String var_two = "belajar";
+        String var_three = "Java Language";
+
+        // menggabungkan string ke dalam satu variable
+        String gabungan = new String();
+        gabungan = gabungan.concat(var_one);
+        gabungan = gabungan.concat(var_two);
+        gabungan = gabungan.concat(var_three);
+
         // menampilkan hasil ke standar output
-        System.out.println(cont_values);
+        System.out.println(gabungan);
     }
 }
