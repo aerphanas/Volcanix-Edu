@@ -37,16 +37,16 @@ public class TugasOne {
         // =============================================
 
         // membuat 2 variable short
-        short   var_short_one,  var_short_two;
+        short var_short_one, var_short_two;
 
         // membuat 2 variable double
-        double  var_double_one, var_double_two;
+        double var_double_one, var_double_two;
 
         // membuat 2 variable char
-        char    var_char_one,   var_char_two;
+        char var_char_one, var_char_two;
 
         // membuat 2 variable boolean
-        boolean var_bool_one,   var_bool_two;
+        boolean var_bool_one, var_bool_two;
 
         // memberikan value untuk variable yang dibuat
 
@@ -79,12 +79,11 @@ public class TugasOne {
         String var_three = "Java Language";
 
         // menggabungkan string ke dalam satu variable
-        String gabungan = new String();
-        gabungan = gabungan.concat(var_one);
-        gabungan = gabungan.concat(var_two);
-        gabungan = gabungan.concat(var_three);
+        String mix_String = var_one +
+                            var_two +
+                            var_three;
 
         // menampilkan hasil ke standar output
-        System.out.println(gabungan);
+        System.out.println(mix_String);
     }
 }
