@@ -1,0 +1,9 @@
+#+TITLE: Tugas Minggu 3
+
+* Input, Output, Data Variabel & Variable
+  - Buatlah program untuk input nama anda dan output kalimat "Selamat datang di bootcamp Kawah Edukasi, {namaAnda}"
+  - Buatlah masing masing dua variable untuk data type short, double, char, dan boolean
+  - Buatlah 3 variable string dengan value masing-masing, "Saya senang" "belajar" "Java Language", lalu gabungkan dan print hasilnya.
+
+* Operator
+  -Implentasi rumus luas lingkaran dan volume balok pada bahasa Java
