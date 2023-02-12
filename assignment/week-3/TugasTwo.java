@@ -9,12 +9,12 @@ public class TugasTwo {
         // untuk mengecek apakah implementasi benar
 
         // mengecek implementasi luas lingkaran
-        System.out.println( "luas dari lingkaran " +
+        System.out.println( "Luas dari Lingkaran " +
                             "jika diketahui jari-jari = 4 cm adalah "+
                             luasLingkaran(4.0) + " cm2");
 
         // mengecek implementasi volume balok
-        System.out.println( "volume balok " +
+        System.out.println( "Volume Balok " +
                             "jika diketahui panjang = 5 cm, " +
                             "lebar = 5 cm dan tinggi = 5 cm adalah " +
                             volumeBalok(5, 5, 5) + " cm3");
