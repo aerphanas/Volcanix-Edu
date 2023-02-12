@@ -6,4 +6,4 @@
   - Buatlah 3 variable string dengan value masing-masing, "Saya senang" "belajar" "Java Language", lalu gabungkan dan print hasilnya.
 
 * Operator
-  -Implentasi rumus luas lingkaran dan volume balok pada bahasa Java
+  - Implentasi rumus luas lingkaran dan volume balok pada bahasa Java
