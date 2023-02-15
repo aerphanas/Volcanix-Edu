@@ -1,0 +1,14 @@
+#+TITLE: Maven and jdbc
+
+dalam folder demo terdapat proyek yang dibuat menggunakan maven dan menggunakan jdbc untuk menghubungkan database dan melakukan kueri
+
+* useful link
+  - [[https://maven.apache.org/guides/getting-started/index.html][Maven Getting Started Guide]]
+
+* Maven
+
+maven adalah sebuah dependency manager untuk proyek, kita dapat dengan mudah menambahkan dependensi ke dalam sebuah projek
+
+* jdbc
+
+jdbc adalah sebuah package yang digunakan untuk koneksi ke database
