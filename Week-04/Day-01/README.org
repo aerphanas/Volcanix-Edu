@@ -2,6 +2,11 @@
 
 dalam folder demo terdapat proyek yang dibuat menggunakan maven dan menggunakan jdbc untuk menghubungkan database dan melakukan kueri
 
+- folder MY-APP adalalah sebuah proyek yang dibuat menggunakan maven dengan perintah
+  #+BEGIN_SRC
+    mvn -B archetype:generate -DgroupId=com.mycompany.app -DartifactId=my-app -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.4
+  #+END_SRC
+
 * useful link
   - [[https://maven.apache.org/guides/getting-started/index.html][Maven Getting Started Guide]]
 
