@@ -1,0 +1,8 @@
+#+TITLE: Object Oriented Programming
+
+* compile & run
+
+#+BEGIN_SRC bash
+javac Main.java
+java Main
+#+END_SRC
