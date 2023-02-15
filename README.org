@@ -62,6 +62,23 @@ Back-end with Java
    SCHEDULED: <2023-02-08 Rab>
    - [X] ArrayList & Vector
 
-** TODO Day 4 [0%]
+** DONE Day 4 [100%]
    SCHEDULED: <2023-02-09 Kam>
-   - [ ] OOP
+   - [X] OOP Basic
+
+* Week 4
+** TODO Day 1 [0%]
+   SCHEDULED: <2023-02-13 Mon>
+   - [ ] maven and JDBC
+
+** TODO Day 2 [0%]
+   SCHEDULED: <2023-02-14 Tue>
+   - [ ] OOP Inheritance
+
+** TODO Day 3 [0%]
+   SCHEDULED: <2023-02-15 Wed>
+   - [ ] OOP Polymorphism
+
+** TODO Day 4 [0%]
+   SCHEDULED: <2023-02-16 Thu>
+   - [ ] OOP Design Pattern
