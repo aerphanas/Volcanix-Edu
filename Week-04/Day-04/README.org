@@ -1,0 +1,27 @@
+#+TITLE: Basic Quarkus
+
+* Quarkus Workflow
+  - Scaffold
+  - Launch Dev Mode
+  - Code
+  - Test
+  - Package
+  - Deploy
+
+* Quarkus Scaffold with website
+
+[[https://code.quarkus.redhat.com/][quarkus quick start]]
+
+- set version, build tool, java version and starter code
+- click Generate
+- unzip and run ./mvnw quarkus:dev
+
+* Quarkus Scaffold with maven
+
+#+BEGIN_SRC sh
+mvn io.quarkus:quarkus-maven-plugin:1.4.1.Final:create \
+    -DprojectGroupId=org.acme \
+    -DprojectArtifactId=getting-started \
+    -DclassName="org.acme.quickstart.GreetingResource" \
+    -Dpath="/hello"
+#+END_SRC
