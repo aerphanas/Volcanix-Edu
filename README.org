@@ -67,9 +67,9 @@ Back-end with Java
    - [X] OOP Basic
 
 * Week 4
-** TODO Day 1 [0%]
+** DONE Day 1 [100%]
    SCHEDULED: <2023-02-13 Mon>
-   - [ ] maven and JDBC
+   - [X] maven and JDBC
 
 ** TODO Day 2 [0%]
    SCHEDULED: <2023-02-14 Tue>
