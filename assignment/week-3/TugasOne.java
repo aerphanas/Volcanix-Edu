@@ -37,34 +37,34 @@ public class TugasOne {
         // =============================================
 
         // membuat 2 variable short
-        short var_short_one, var_short_two;
+        short varShortOne, varShortTwo;
 
         // membuat 2 variable double
-        double var_double_one, var_double_two;
+        double varDoubleOne, varDoubleTwo;
 
         // membuat 2 variable char
-        char var_char_one, var_char_two;
+        char varCharOne, varCharTwo;
 
         // membuat 2 variable boolean
-        boolean var_bool_one, var_bool_two;
+        boolean varBoolOne, varBoolTwo;
 
         // memberikan value untuk variable yang dibuat
 
         // memberikan value ke tipe data short
-        var_short_one = 0;
-        var_short_two = 0;
+        varShortOne = 0;
+        varShortTwo = 0;
 
         // memberikan value ke tipe data double
-        var_double_one = 0.0;
-        var_double_two = 0.0;
+        varDoubleOne = 0.0;
+        varDoubleTwo = 0.0;
 
         // memberikan value ke tipe data char
-        var_char_one = '0';
-        var_char_two = '0';
+        varCharOne = '0';
+        varCharTwo = '0';
 
         // memberikan value ke tipe data boolean
-        var_bool_one = false;
-        var_bool_two = false;
+        varBoolOne = false;
+        varBoolTwo = false;
 
         // =======================================================
         // tugas poin ketiga dari tugas minggu ke 3
@@ -74,16 +74,16 @@ public class TugasOne {
         // =======================================================
 
         // membuat 3 variable string dengan variable yang ditentukan
-        String var_one = "Saya senang";
-        String var_two = "belajar";
-        String var_three = "Java Language";
+        String varOne = "Saya senang";
+        String varTwo = "belajar";
+        String varThree = "Java Language";
 
         // menggabungkan string ke dalam satu variable
-        String mix_String = var_one +
-                            var_two +
-                            var_three;
+        String mixStrings = varOne +
+                            varTwo +
+                            varThree;
 
         // menampilkan hasil ke standar output
-        System.out.println(mix_String);
+        System.out.println(mixStrings);
     }
 }
