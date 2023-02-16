@@ -71,13 +71,13 @@ Back-end with Java
    SCHEDULED: <2023-02-13 Mon>
    - [X] maven and JDBC
 
-** TODO Day 2 [0%]
+** DONE Day 2 [100%]
    SCHEDULED: <2023-02-14 Tue>
-   - [ ] OOP Inheritance
+   - [X] OOP Inheritance
 
-** TODO Day 3 [0%]
+** DONE Day 3 [100%]
    SCHEDULED: <2023-02-15 Wed>
-   - [ ] OOP Polymorphism
+   - [X] OOP Polymorphism
 
 ** TODO Day 4 [0%]
    SCHEDULED: <2023-02-16 Thu>
