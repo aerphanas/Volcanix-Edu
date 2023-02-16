@@ -51,19 +51,19 @@ Back-end with Java
 
 * Week 3
 ** DONE Day 1 [100%]
-   SCHEDULED: <2023-02-06 Sen>
+   SCHEDULED: <2023-02-06 Mon>
    - [X] Exception
 
 ** DONE Day 2 [100%]
-   SCHEDULED: <2023-02-07 Sel>
+   SCHEDULED: <2023-02-07 Tue>
    - [X] String Object
 
 ** DONE Day 3 [100%]
-   SCHEDULED: <2023-02-08 Rab>
+   SCHEDULED: <2023-02-08 Wed>
    - [X] ArrayList & Vector
 
 ** DONE Day 4 [100%]
-   SCHEDULED: <2023-02-09 Kam>
+   SCHEDULED: <2023-02-09 Thu>
    - [X] OOP Basic
 
 * Week 4
@@ -82,3 +82,12 @@ Back-end with Java
 ** DONE Day 4 [100%]
    SCHEDULED: <2023-02-16 Thu>
    - [X] Quarkus basic
+
+* Weekk 5
+** TODO Day 1 [0%]
+   SCHEDULED: <2023-02-20 Mon>
+   - [ ] Quarkus REST API
+
+** TODO Day 2 [%]
+   SCHEDULED: <2023-02-21 Tue>
+   - [ ] Access DB
