@@ -39,7 +39,7 @@ public class TugasOne {
         // untuk mengecek setiap regex
         for (int i = 0;i < pattern.length;i++) {
             switch (i) {
-                // pattern pertama dalah email
+                // pattern pertama dalah Email
                 case 0:
                     regex = Pattern.compile(pattern[i]);
                     matcher = regex.matcher(input);
@@ -49,7 +49,7 @@ public class TugasOne {
                     }
                     break;
 
-                // pattern kedua adalah date dd-MM-yyyy
+                // pattern kedua adalah date DD-MM-YYYY
                 case 1:
                     regex = Pattern.compile(pattern[i]);
                     matcher = regex.matcher(input);
@@ -59,7 +59,7 @@ public class TugasOne {
                     }
                     break;
 
-                // pattern ketiga adalah date dd, MM yyyy
+                // pattern ketiga adalah date DDDD, MMMM YY
                 case 2:
                     regex = Pattern.compile(pattern[i]);
                     matcher = regex.matcher(input);
@@ -69,7 +69,7 @@ public class TugasOne {
                     }
                     break;
 
-                // pattern keempat adalah ip addr
+                // pattern keempat adalah IP Address
                 case 3:
                     regex = Pattern.compile(pattern[i]);
                     matcher = regex.matcher(input);
