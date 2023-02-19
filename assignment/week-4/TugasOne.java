@@ -27,7 +27,7 @@ public class TugasOne {
         final String pattern[] = {
             "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$", // email
             "^(0[1-9]|[1-2][0-9]|3[0-1])-(0[1-9]|1[0-2])-\\d{4}$", // date DD-MM-YYYY
-            "^[A-Z][a-z]{3,8}, [A-Z][a-z]{2,8} \\d{2}$", // date dddd, MMMM YY
+            "^[A-Z][a-z]{3,8}, [A-Z][a-z]{2,8} \\d{2}$", // date DDDD, MMMM YY
             "\\b(?:\\d{1,3}\\.){3}\\d{1,3}\\b" // Ip addr
         };
 
@@ -64,7 +64,7 @@ public class TugasOne {
                     regex = Pattern.compile(pattern[i]);
                     matcher = regex.matcher(input);
                     if(matcher.find()){
-                        System.out.println("Pattern Matched : This is Date dddd, MMMM YY");
+                        System.out.println("Pattern Matched : This is Date DDDD, MMMM YY");
                         return true;
                     }
                     break;
