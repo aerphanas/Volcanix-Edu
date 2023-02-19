@@ -1,5 +1,5 @@
 /**************************************************************************
- *   TugasOne.java  --  This file is part of Volcanix-edu.                *
+ *   TugasOne.java                                                        *
  *                                                                        *
  *   Copyright (C) 2023 aerphanas                                         *
  *                                                                        *
@@ -30,18 +30,18 @@ import java.util.regex.Pattern;
 public class TugasOne {
     public static void main(String[] args) {
         // melakukan pengecekan jika fungsi bisa berjalan
-        whatIsIt("muhammadaviv14@gmail.com");
-        whatIsIt("19-01-2038");
-        whatIsIt("19, 01 2038");
-        whatIsIt("127.0.0.1");
+        whatIsThis("muhammadaviv14@gmail.com");
+        whatIsThis("19-01-2038");
+        whatIsThis("19, 01 2038");
+        whatIsThis("127.0.0.1");
 
         // mengecek juga bila input bukan termasuk
         // input yang diharapkan dan akan mencentak "NONE"
         // ke standard output
-        whatIsIt("c programming");
+        whatIsThis("c programming");
     }
 
-    public static boolean whatIsIt(String input) {
+    public static boolean whatIsThis(String input) {
 
         // membuat array yang berisi regex yang akan diterapkan
         // dalam string
