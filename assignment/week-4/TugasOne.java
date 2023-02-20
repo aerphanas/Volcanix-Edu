@@ -44,7 +44,7 @@ public class TugasOne {
         Matcher matcher = null;
 
         // untuk mengecek setiap regex
-        for (int i = 0;i < pattern.length;i++) {
+        for (byte i = 0;i < pattern.length;i++) {
             switch (i) {
                 // pattern pertama dalah Email
                 case P_EMAIL:
