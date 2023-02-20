@@ -15,7 +15,7 @@ public class TugasOne {
         whatIsThis("127.0.0.1");
 
         // mengecek juga bila input bukan termasuk
-        // input yang diharapkan dan akan mencentak "NONE"
+        // input yang diharapkan dan akan mencentak "Pattern Mismatched"
         // ke standard output
         whatIsThis("c programming");
     }
@@ -31,6 +31,13 @@ public class TugasOne {
             "\\b(?:\\d{1,3}\\.){3}\\d{1,3}\\b" // Ip addr
         };
 
+        // agar lebih mudah dibaca saya akan membuat seperti macro
+        // untuk mnandai isi dari pattern array
+        final byte P_EMAIL = 0;
+        final byte P_DATE_DD_MM_YYYY = 1;
+        final byte P_DATE_DDDD_MMMM_YY = 2;
+        final byte P_IP_ADDR = 3;
+
         // mendeklarasikan object dengan fungsi regex
         // dan memberikan null
         Pattern regex = null;
@@ -40,7 +47,7 @@ public class TugasOne {
         for (int i = 0;i < pattern.length;i++) {
             switch (i) {
                 // pattern pertama dalah Email
-                case 0:
+                case P_EMAIL:
                     regex = Pattern.compile(pattern[i]);
                     matcher = regex.matcher(input);
                     if(matcher.find()){
@@ -50,7 +57,7 @@ public class TugasOne {
                     break;
 
                 // pattern kedua adalah date DD-MM-YYYY
-                case 1:
+                case P_DATE_DD_MM_YYYY:
                     regex = Pattern.compile(pattern[i]);
                     matcher = regex.matcher(input);
                     if(matcher.find()){
@@ -60,7 +67,7 @@ public class TugasOne {
                     break;
 
                 // pattern ketiga adalah date DDDD, MMMM YY
-                case 2:
+                case P_DATE_DDDD_MMMM_YY:
                     regex = Pattern.compile(pattern[i]);
                     matcher = regex.matcher(input);
                     if(matcher.find()){
@@ -70,7 +77,7 @@ public class TugasOne {
                     break;
 
                 // pattern keempat adalah IP Address
-                case 3:
+                case P_IP_ADDR:
                     regex = Pattern.compile(pattern[i]);
                     matcher = regex.matcher(input);
                     if(matcher.find()){
@@ -82,8 +89,8 @@ public class TugasOne {
 
         }
 
-        // akan tercetak "NONE" dan return false
-        System.out.println("NONE");
+        // akan tercetak "Pattern Mismatched" dan return false
+        System.out.println("Pattern Mismatched : This is not Email, Date or Ip address");
         return false;
     }
 }
