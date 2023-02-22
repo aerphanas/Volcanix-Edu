@@ -1,0 +1,44 @@
+#+TITLE: Quarkus REST
+
+* apa itu rest
+
+REST (Representational State Transfer) adalah gaya arsitektur perangkat lunak untuk membangun sistem yang terdistribusi di lingkungan web. Dalam arsitektur REST, sumber daya (resource) diidentifikasi dengan sebuah URI (Uniform Resource Identifier) dan dapat diakses melalui antarmuka standar HTTP. Klien dapat menggunakan HTTP request methods seperti GET, POST, PUT, dan DELETE untuk melakukan operasi pada sumber daya tersebut.
+
+* valid http method
+
+- @GET
+- @POST
+- @PUT
+- @DELETE
+- @PATCH
+- @HEAD
+- @OPTIONS
+
+more info at [[https://github.com/for-GET/know-your-http-well/blob/master/methods.md][KNOW YOUR HTTP methods WELL]]
+
+* http status code
+- Informational responses (100–199)
+- Successful responses (200–299)
+- Redirects (300–399)
+- Client errors (400–499)
+- Server errors (500–599)
+
+more info at [[https://developer.mozilla.org/en-US/docs/Web/HTTP/Status][mdn web docs]]
+
+* list all quarkus command
+
+#+BEGIN_SRC sh
+  ./mvnw quarkus:help
+#+END_SRC
+
+* how to add extension to quarkus
+
+#+BEGIN_SRC sh
+  ./mvnw quarkus:add-extension -Dextensions="extension name"
+#+END_SRC
+
+* curl command
+
+#+BEGIN_SRC sh
+  curl -X POST "http://localhost:8080/devel" -H "Content-Type: application/json" -d '{"name" : "Ada"}'
+#+END_SRC

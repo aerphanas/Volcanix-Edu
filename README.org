@@ -84,10 +84,10 @@ Back-end with Java
    - [X] Quarkus basic
 
 * Weekk 5
-** TODO Day 1 [0%]
+** DONE Day 1 [100%]
    SCHEDULED: <2023-02-20 Mon>
-   - [ ] Quarkus REST API
+   - [X] Quarkus REST API
 
-** TODO Day 2 [%]
+** TODO Day 2 [0%]
    SCHEDULED: <2023-02-21 Tue>
    - [ ] Access DB
