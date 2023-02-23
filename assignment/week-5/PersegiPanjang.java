@@ -1,6 +1,7 @@
 public class PersegiPanjang implements BangunDatar {
 
     private double panjang, lebar;
+
     public PersegiPanjang(double panjang, double lebar) {
         this.panjang = panjang;
         this.lebar = lebar;
@@ -16,6 +17,7 @@ public class PersegiPanjang implements BangunDatar {
         return 2 * (panjang + lebar);
     }
 
+    // getter & setter
     public double getPanjang() {
         return panjang;
     }

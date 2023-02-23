@@ -7,6 +7,9 @@ public class Main {
         Segitiga tanahSegitiga = new Segitiga(10, 7);
         Lingkaran tanahLingkaran = new Lingkaran(7);
 
+        // mensetting ke-3 sisi dari segitiga
+        // yang nanti akan digunakan untuk menghitung
+        // keliling segitiga
         tanahSegitiga.setSisi1(8);
         tanahSegitiga.setSisi2(9);
         tanahSegitiga.setSisi3(10);
@@ -16,6 +19,7 @@ public class Main {
 
         System.out.println("Luas tanah persegi panjang adalah : " + tanahPersegiPanjang.hitungLuas());
         System.out.println("Keliling tanah persegi panjang adalah : " + tanahPersegiPanjang.hitungKeliling());
+
         System.out.println("Luas tanah segitiga adalah : " + tanahSegitiga.hitungLuas());
         System.out.println("Keliling tanah segitiga adalah : " + tanahSegitiga.hitungKeliling());
 

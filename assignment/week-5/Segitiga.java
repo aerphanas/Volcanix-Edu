@@ -24,6 +24,7 @@ public class Segitiga implements BangunDatar {
         return sisi1 + sisi2 + sisi3;
     }
 
+    // getter & setter
     public double getAlas() {
         return alas;
     }

@@ -1,6 +1,7 @@
 public class Persegi implements BangunDatar {
 
     private double sisi;
+
     public Persegi(double sisi) {
         this.sisi = sisi;
     }
@@ -15,6 +16,7 @@ public class Persegi implements BangunDatar {
         return 4 * sisi;
     }
 
+    // getter & setter
     public double getSisi() {
         return sisi;
     }

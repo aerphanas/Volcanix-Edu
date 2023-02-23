@@ -1,6 +1,7 @@
 public class Lingkaran implements BangunDatar {
 
     private double rusuk;
+
     public Lingkaran(double rusuk) {
         this.rusuk = rusuk;
     }
@@ -15,6 +16,7 @@ public class Lingkaran implements BangunDatar {
         return 2 * Math.PI * rusuk;
     }
 
+    // getter & setter
     public double getRusuk() {
         return rusuk;
     }
