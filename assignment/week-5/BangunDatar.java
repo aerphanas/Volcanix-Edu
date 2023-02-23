@@ -2,7 +2,7 @@
 // gunakan pada klas
 public interface BangunDatar {
 
-    double hitungLuas();
-    double hitungKeliling();
+    public double hitungLuas();
+    public double hitungKeliling();
 
 }
