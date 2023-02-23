@@ -6,6 +6,15 @@ public class Lingkaran implements BangunDatar {
         this.rusuk = rusuk;
     }
 
+    public static double hitungKeliling(double rusuk) {
+        return 2 * Math.PI * rusuk;
+    }
+
+    public static double hitungLuas(double rusuk) {
+        return Math.PI * Math.pow(rusuk, 2);
+    }
+
+    // method dari interface
     @Override
     public double hitungLuas() {
         return Math.PI * Math.pow(rusuk, 2);

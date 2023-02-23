@@ -6,6 +6,15 @@ public class Persegi implements BangunDatar {
         this.sisi = sisi;
     }
 
+    public static double hitungLuas(double sisi) {
+        return Math.pow(sisi, 2);
+    }
+
+    public static double hitungKeliling(double sisi) {
+        return 4 * sisi;
+    }
+
+    // method dari interface
     @Override
     public double hitungLuas() {
         return Math.pow(sisi, 2);

@@ -2,6 +2,7 @@ public class Main {
     
     public static void main(String[] args) {
 
+        // polimorfisme
         BangunDatar tanah;
 
         tanah = new Persegi(5);

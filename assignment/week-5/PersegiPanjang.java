@@ -7,6 +7,15 @@ public class PersegiPanjang implements BangunDatar {
         this.lebar = lebar;
     }
 
+    public static double hitungLuas(double panjang, double lebar) {
+        return lebar * panjang;
+    }
+
+    public static double hitungKeliling(double panjang, double lebar) {
+        return 2 * (panjang + lebar);
+    }
+
+    // method dari interface
     @Override
     public double hitungLuas() {
         return lebar * panjang;

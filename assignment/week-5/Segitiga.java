@@ -14,6 +14,15 @@ public class Segitiga implements BangunDatar {
         this.sisi3 = sisi3;
     }
 
+    public static double hitungLuas(double alas, double tinggi) {
+        return alas * tinggi / 2;
+    }
+
+    public static double hitungKeliling(double sisi1, double sisi2, double sisi3) {
+        return sisi1 + sisi2 + sisi3;
+    }
+
+    // method dari interface
     @Override
     public double hitungLuas() {
         return alas * tinggi / 2;
