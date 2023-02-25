@@ -1,0 +1,1 @@
+/home/adivin/.m2/repository/org/postgresql/postgresql/42.5.3/postgresql-42.5.3-sources.jar

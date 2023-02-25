@@ -1,0 +1,18 @@
+#+TITLE: Connect Database Quarkus
+
+* How to install extension
+
+im gonna use postgresql as database so we need to use jdbc-postgesql
+
+#+BEGIN_SRC sh
+  ./mvnw quarkus:add-extension -Dextensions='jdbc-postgresql'
+#+END_SRC
+
+* usefull link
+  - [[https://quarkus.io/guides/datasource][quarkus datasource]]
+
+* How to test
+
+#+BEGIN_SRC sh
+  curl -iX GET "http://localhost:8080/hello/db/5"
+#+END_SRC
