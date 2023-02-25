@@ -36,11 +36,11 @@ public class GreetingResource {
     @Produces(MediaType.TEXT_PLAIN)
     public String getData() {
         try (Connection conn = dataSource.getConnection();
-             PreparedStatement ps = conn.prepareStatement("SELECT * FROM movies.movie LIMIT 1");
+             PreparedStatement ps = conn.prepareStatement("SELECT version()");
              ResultSet rs = ps.executeQuery()) {
             while (rs.next()) {
-                String data = rs.getString(2);
-                return data;
+                String data = rs.getString(1);
+                return data + "\n";
             }
         } catch (SQLException e) {
             return "Error 1";
