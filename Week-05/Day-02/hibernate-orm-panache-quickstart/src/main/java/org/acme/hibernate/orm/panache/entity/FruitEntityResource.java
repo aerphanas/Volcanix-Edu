@@ -13,11 +13,11 @@ import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.WebApplicationException;
+import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.ext.ExceptionMapper;
 import javax.ws.rs.ext.Provider;
 
-import org.acme.hibernate.orm.panache.repository.Fruit;
 import org.jboss.logging.Logger;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -27,21 +27,21 @@ import io.quarkus.panache.common.Sort;
 
 @Path("entity/fruits")
 @ApplicationScoped
-@Produces("application/json")
-@Consumes("application/json")
+@Produces(MediaType.APPLICATION_JSON)
+@Consumes(MediaType.APPLICATION_JSON)
 public class FruitEntityResource {
 
     private static final Logger LOGGER = Logger.getLogger(FruitEntityResource.class.getName());
 
     @GET
-    public List<FruitEntity> get() {
-        return FruitEntity.listAll(Sort.by("name"));
+    public List<Movie> get() {
+        return Movie.listAll(Sort.by("name"));
     }
 
     @GET
     @Path("{id}")
-    public FruitEntity getSingle(Long id) {
-        FruitEntity entity = FruitEntity.findById(id);
+    public Movie getSingle(Long id) {
+        Movie entity = Movie.findById(id);
         if (entity == null) {
             throw new WebApplicationException("Fruit with id of " + id + " does not exist.", 404);
         }
@@ -50,8 +50,8 @@ public class FruitEntityResource {
 
     @POST
     @Transactional
-    public Response create(FruitEntity fruit) {
-        if (fruit.id != null) {
+    public Response create(Movie fruit) {
+        if (fruit.name != null) {
             throw new WebApplicationException("Id was invalidly set on request.", 422);
         }
 
@@ -62,12 +62,12 @@ public class FruitEntityResource {
     @PUT
     @Path("{id}")
     @Transactional
-    public FruitEntity update(Long id, Fruit fruit) {
+    public Movie update(Long id, Movie fruit) {
         if (fruit.name == null) {
             throw new WebApplicationException("Fruit Name was not set on request.", 422);
         }
 
-        FruitEntity entity = FruitEntity.findById(id);
+        Movie entity = Movie.findById(id);
 
         if (entity == null) {
             throw new WebApplicationException("Fruit with id of " + id + " does not exist.", 404);
@@ -82,7 +82,7 @@ public class FruitEntityResource {
     @Path("{id}")
     @Transactional
     public Response delete(Long id) {
-        FruitEntity entity = FruitEntity.findById(id);
+        Movie entity = Movie.findById(id);
         if (entity == null) {
             throw new WebApplicationException("Fruit with id of " + id + " does not exist.", 404);
         }

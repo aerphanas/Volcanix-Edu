@@ -16,3 +16,8 @@ im gonna use postgresql as database so we need to use jdbc-postgesql
 #+BEGIN_SRC sh
   curl -iX GET "http://localhost:8080/hello/db/5"
 #+END_SRC
+
+* extension for connect to database postgresql
+- quarkus-hibernate-orm-panache (orm panache)
+- jdbc-postgresql (postgresql connection)
+- quarkus-resteasy-reactive-jackson (json support)
