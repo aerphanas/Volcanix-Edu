@@ -119,14 +119,3 @@ class Test{
             + secretHandshake + "/" + smell;
     }
 }
-
-@Path("/calc")
-class Calcullate {
-
-    @GET
-    @Produces(MediaType.TEXT_PLAIN)
-    public String wellcome() {
-        return "wellcome to calculator";
-    }
-    
-}
