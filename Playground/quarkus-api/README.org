@@ -1,0 +1,29 @@
+#+TITLE: Quarkus Api example
+
+* how to test REST API with cURL
+
+- GET
+
+#+BEGIN_SRC sh
+curl -X GET "http://localhost:8080/api/"
+#+END_SRC
+
+- POST
+#+BEGIN_SRC sh
+curl -X POST "http://localhost:8080/api" \
+     -H "Content-Type: application/json" \
+     -d '{"name":"John Doe"}'
+#+END_SRC
+
+- PUT
+#+BEGIN_SRC sh
+curl -X PUT "http://localhost:8080/api/0" \
+     -H "Content-Type: application/json" \
+     -d '{"name":"Jane Doe"}' 
+#+END_SRC
+
+- DELETE
+
+#+BEGIN_SRC sh
+curl -X DELETE http://localhost:8080/api/0
+#+END_SRC
