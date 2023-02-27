@@ -34,7 +34,7 @@ public class Rest {
             People item = new People(i, list.get(i));
             response.add(item);
         }
-        return Response.ok(response).build();
+        return Response.ok(response, MediaType.APPLICATION_JSON_TYPE).build();
     }
 
     @POST
@@ -51,7 +51,7 @@ public class Rest {
         if (id >= list.size())
             return Response.status(400).entity("Index out of range").build();
         list.set(id, name);
-        return Response.ok("OK").build();
+        return Response.ok("OK", MediaType.TEXT_PLAIN_TYPE).build();
     }
 
     @DELETE
@@ -59,7 +59,7 @@ public class Rest {
     public Response deleteList(@PathParam("id") int id) {
         Optional<String> removed = Optional.ofNullable(list.remove(id));
         if (removed.isPresent()) {
-            return Response.ok("OK").build();
+            return Response.ok("OK", MediaType.TEXT_PLAIN_TYPE).build();
         } else {
             return Response.status(400).entity("Index out of range").build();
         }
