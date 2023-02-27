@@ -2,7 +2,6 @@ package org.acme;
 
 import java.io.StringReader;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -24,19 +23,19 @@ import javax.ws.rs.core.Response;
 @Consumes(MediaType.APPLICATION_JSON)
 public class Rest {
 
-    private List<String> list = Collections.synchronizedList(new ArrayList<>());
+    private List<String> list = new ArrayList<>();
 
     @GET
-    public List<People> allList() {
+    public Response allList() {
+
         List<People> response = new ArrayList<>();
+
         for (int i = 0; i < list.size(); i++) {
-            People item = new People(i + 1, list.get(i));
+            People item = new People(i, list.get(i));
             response.add(item);
         }
-        return response;
+        return Response.ok(response).build();
     }
-    
-    
 
     @POST
     public Response addList(String requestBody) {
@@ -45,22 +44,24 @@ public class Rest {
         list.add(name);
         return Response.status(201).build();
     }
-    
 
     @PUT
     @Path("/{id}")
-    public String updateList(@PathParam("id") int id, String name) {
-        if (id >= list.size()) {
-            return "Index out of range";
-        }
+    public Response updateList(@PathParam("id") int id, String name) {
+        if (id >= list.size())
+            return Response.status(400).entity("Index out of range").build();
         list.set(id, name);
-        return "OK";
+        return Response.ok("OK").build();
     }
 
     @DELETE
     @Path("/{id}")
-    public String deleteList(@PathParam("id") int id) {
+    public Response deleteList(@PathParam("id") int id) {
         Optional<String> removed = Optional.ofNullable(list.remove(id));
-        return removed.isPresent() ? "OK" : "Index out of range";
+        if (removed.isPresent()) {
+            return Response.ok("OK").build();
+        } else {
+            return Response.status(400).entity("Index out of range").build();
+        }
     }
 }
