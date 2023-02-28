@@ -18,8 +18,6 @@ GET :url/api/
 // Request duration: 0.007690s
 #+END_SRC
 
-- POST
-
 #+BEGIN_SRC restclient :var url=URL :export both
 POST :url/api/
 Content-Type: application/json
@@ -37,7 +35,6 @@ Content-Type: application/json
 // Request duration: 0.042957s
 #+END_SRC
 
-- PUT
 #+BEGIN_SRC restclient :var url=URL id=0 :export both
 PUT :url/api/:id
 Content-Type: application/json
