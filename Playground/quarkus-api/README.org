@@ -4,6 +4,8 @@ Base URL:
 #+NAME: URL
 : http://localhost:8080
 
+- GET
+
 #+BEGIN_SRC restclient :var url=URL :exports both
 GET :url/api/
 #+END_SRC
@@ -17,6 +19,8 @@ GET :url/api/
 // Content-Type: application/json
 // Request duration: 0.007690s
 #+END_SRC
+
+- POST
 
 #+BEGIN_SRC restclient :var url=URL :export both
 POST :url/api/
@@ -35,6 +39,8 @@ Content-Type: application/json
 // Request duration: 0.042957s
 #+END_SRC
 
+- PUT
+
 #+BEGIN_SRC restclient :var url=URL id=0 :export both
 PUT :url/api/:id
 Content-Type: application/json
@@ -52,6 +58,8 @@ content-length: 2
 Content-Type: text/plain
 Request duration: 0.011580s
 #+END_SRC
+
+- DELETE
 
 #+BEGIN_SRC restclient :var url=URL id=0 :export both
 DELETE :url/api/:id
