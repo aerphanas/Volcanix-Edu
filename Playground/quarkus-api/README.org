@@ -1,29 +1,71 @@
-#+TITLE: Quarkus Api example
+#+TITLE: Api Documentation
 
-* how to test REST API with cURL
+Base URL:
+#+NAME: URL
+: http://localhost:8080
 
-- GET
+#+BEGIN_SRC restclient :var url=URL :exports both
+GET :url/api/
+#+END_SRC
 
-#+BEGIN_SRC sh
-curl -X GET "http://localhost:8080/api/"
+#+RESULTS:
+#+BEGIN_SRC js
+[]
+// GET http://localhost:8080/api/
+// HTTP/1.1 200 OK
+// content-length: 2
+// Content-Type: application/json
+// Request duration: 0.007690s
 #+END_SRC
 
 - POST
-#+BEGIN_SRC sh
-curl -X POST "http://localhost:8080/api" \
-     -H "Content-Type: application/json" \
-     -d '{"name":"John Doe"}'
+
+#+BEGIN_SRC restclient :var url=URL :export both
+POST :url/api/
+Content-Type: application/json
+{
+  "name": "John Doe"
+}
+#+END_SRC
+
+#+RESULTS:
+#+BEGIN_SRC js
+// POST http://localhost:8080/api/
+// HTTP/1.1 201 Created
+// Content-Type: application/json
+// content-length: 0
+// Request duration: 0.042957s
 #+END_SRC
 
 - PUT
-#+BEGIN_SRC sh
-curl -X PUT "http://localhost:8080/api/0" \
-     -H "Content-Type: application/json" \
-     -d '{"name":"Jane Doe"}' 
+#+BEGIN_SRC restclient :var url=URL id=0 :export both
+PUT :url/api/:id
+Content-Type: application/json
+{
+  "name": "Jane Doe"
+}
 #+END_SRC
 
-- DELETE
+#+RESULTS:
+#+BEGIN_SRC text
+OK
+PUT http://localhost:8080/api/0
+HTTP/1.1 200 OK
+content-length: 2
+Content-Type: text/plain
+Request duration: 0.011580s
+#+END_SRC
 
-#+BEGIN_SRC sh
-curl -X DELETE http://localhost:8080/api/0
+#+BEGIN_SRC restclient :var url=URL id=0 :export both
+DELETE :url/api/:id
+#+END_SRC
+
+#+RESULTS:
+#+BEGIN_SRC text
+OK
+DELETE http://localhost:8080/api/0
+HTTP/1.1 200 OK
+content-length: 2
+Content-Type: text/plain
+Request duration: 0.008893s
 #+END_SRC
