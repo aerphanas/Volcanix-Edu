@@ -1,0 +1,98 @@
+#+TITLE: API
+
+* Properties
+:PROPERTIES:
+:header-args: :var url="http://localhost:8080/api" :exports both
+:END:
+
+- URL: https://localhost:8080/api
+
+** GET
+
+#+BEGIN_SRC restclient
+GET :url
+#+END_SRC
+
+#+RESULTS:
+#+BEGIN_SRC js
+[
+  {
+    "name": "Jhon",
+    "id": 10
+  }
+]
+// GET http://localhost:8080/api
+// HTTP/1.1 200 OK
+// Content-Type: application/json;charset=UTF-8
+// content-length: 25
+// Request duration: 0.008036s
+#+END_SRC
+
+** POST
+
+#+BEGIN_SRC restclient
+POST :url
+Content-Type: application/json
+{
+    "id": 10,
+    "name": "Jhon"
+}
+#+END_SRC
+
+#+RESULTS:
+#+BEGIN_SRC js
+{
+  "status": "ok"
+}
+// POST http://localhost:8080/api
+// HTTP/1.1 201 Created
+// Content-Type: application/json;charset=UTF-8
+// content-length: 15
+// Request duration: 0.710560s
+#+END_SRC
+
+** PUT
+
+#+BEGIN_SRC restclient
+PUT :url
+Content-Type: application/json
+{
+    "id": 10,
+    "name": "joko"
+}
+#+END_SRC
+
+#+RESULTS:
+#+BEGIN_SRC js
+{
+  "status": "ok"
+}
+// PUT http://localhost:8080/api
+// HTTP/1.1 200 OK
+// Content-Type: application/json;charset=UTF-8
+// content-length: 15
+// Request duration: 0.007422s
+#+END_SRC
+
+** DELETE
+
+#+BEGIN_SRC restclient
+DELETE :url
+Content-Type: application/json
+{
+    "id": 10
+}
+#+END_SRC
+
+#+RESULTS:
+#+BEGIN_SRC js
+{
+  "status": "ok"
+}
+// DELETE http://localhost:8080/api
+// HTTP/1.1 200 OK
+// Content-Type: application/json;charset=UTF-8
+// content-length: 15
+// Request duration: 0.012575s
+#+END_SRC
+
