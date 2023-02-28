@@ -22,7 +22,7 @@ GET :url/api/
 
 - POST
 
-#+BEGIN_SRC restclient :var url=URL :export both
+#+BEGIN_SRC restclient :var url=URL :exports both
 POST :url/api/
 Content-Type: application/json
 {
@@ -41,7 +41,7 @@ Content-Type: application/json
 
 - PUT
 
-#+BEGIN_SRC restclient :var url=URL id=0 :export both
+#+BEGIN_SRC restclient :var url=URL id=0 :exports both
 PUT :url/api/:id
 Content-Type: application/json
 {
@@ -61,7 +61,7 @@ Request duration: 0.011580s
 
 - DELETE
 
-#+BEGIN_SRC restclient :var url=URL id=0 :export both
+#+BEGIN_SRC restclient :var url=URL id=0 :exports both
 DELETE :url/api/:id
 #+END_SRC
 
