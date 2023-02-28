@@ -1,33 +1,48 @@
 #+TITLE: Api Documentation
 
-Base URL:
-#+NAME: URL
-: http://localhost:8080
+* Properties
+:PROPERTIES:
+:header-args:    :var url="http://localhost:8080" id=0 :exports code
+:END:
 
-- GET
+- URL : http://localhost:8080
+- ID  : 0
 
-#+BEGIN_SRC restclient :var url=URL :exports both
+** GET
+
+list all user name
+
+#+BEGIN_SRC restclient
 GET :url/api/
 #+END_SRC
 
 #+RESULTS:
 #+BEGIN_SRC js
-[]
+[
+  {
+    "id": 0,
+    "name": "{\n  \"name\": \"Jane Doe\"\n}"
+  }
+]
 // GET http://localhost:8080/api/
 // HTTP/1.1 200 OK
-// content-length: 2
+// content-length: 50
 // Content-Type: application/json
-// Request duration: 0.007690s
+// Request duration: 0.005558s
 #+END_SRC
 
-- POST
+** POST
 
-#+BEGIN_SRC restclient :var url=URL :exports both
+add new user
+
+#+BEGIN_SRC restclient
+
 POST :url/api/
 Content-Type: application/json
 {
   "name": "John Doe"
 }
+
 #+END_SRC
 
 #+RESULTS:
@@ -36,17 +51,21 @@ Content-Type: application/json
 // HTTP/1.1 201 Created
 // Content-Type: application/json
 // content-length: 0
-// Request duration: 0.042957s
+// Request duration: 0.006447s
 #+END_SRC
 
-- PUT
+** PUT
 
-#+BEGIN_SRC restclient :var url=URL id=0 :exports both
+edit user with id
+
+#+BEGIN_SRC restclient
+
 PUT :url/api/:id
 Content-Type: application/json
 {
   "name": "Jane Doe"
 }
+
 #+END_SRC
 
 #+RESULTS:
@@ -56,13 +75,17 @@ PUT http://localhost:8080/api/0
 HTTP/1.1 200 OK
 content-length: 2
 Content-Type: text/plain
-Request duration: 0.011580s
+Request duration: 0.006094s
 #+END_SRC
 
-- DELETE
+** DELETE
 
-#+BEGIN_SRC restclient :var url=URL id=0 :exports both
+delete user with id
+
+#+BEGIN_SRC restclient
+
 DELETE :url/api/:id
+
 #+END_SRC
 
 #+RESULTS:
@@ -72,5 +95,5 @@ DELETE http://localhost:8080/api/0
 HTTP/1.1 200 OK
 content-length: 2
 Content-Type: text/plain
-Request duration: 0.008893s
+Request duration: 0.005536s
 #+END_SRC

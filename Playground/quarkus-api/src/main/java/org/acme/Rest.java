@@ -19,7 +19,7 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 @Path("/api")
-@Produces(MediaType.APPLICATION_JSON)
+@Produces("application/json")
 @Consumes(MediaType.APPLICATION_JSON)
 public class Rest {
 
