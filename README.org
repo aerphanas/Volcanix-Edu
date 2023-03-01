@@ -96,9 +96,9 @@ Back-end with Java
    SCHEDULED: <2023-02-22 Wed>
    - [X] Manipulate data
 
-** TODO Day 4 [0%]
+** DONE Day 4 [100%]
    SCHEDULED: <2023-02-23 Thu>
-   - [ ] Reporting jasper
+   - [X] Reporting jasper
 
 * Week 6
 ** TODO Day 1 [0%]
