@@ -83,7 +83,7 @@ Back-end with Java
    SCHEDULED: <2023-02-16 Thu>
    - [X] Quarkus basic
 
-* Weekk 5
+* Week 5
 ** DONE Day 1 [100%]
    SCHEDULED: <2023-02-20 Mon>
    - [X] Quarkus REST API
@@ -93,9 +93,39 @@ Back-end with Java
    - [X] Access DB
 
 ** TODO Day 3 [0%]
-  SCHEDULED: <2023-02-22 Wed>
+   SCHEDULED: <2023-02-22 Wed>
    - [ ] Manipulate data
 
 ** TODO Day 4 [0%]
-  SCHEDULED: <2023-02-23 Thu>
-  - [ ] Reporting jasper
+   SCHEDULED: <2023-02-23 Thu>
+   - [ ] Reporting jasper
+
+* Week 6
+** TODO Day 1 [0%]
+   SCHEDULED: <2023-02-27 Mon>
+   - [ ] Apache Poi
+
+** TODO Day 2 [0%]
+   SCHEDULED: <2023-02-28 Tue>
+   - [ ] Email
+
+** TODO Day 3 [0%]
+   SCHEDULED: <2023-03-01 Wed>
+   - [ ] Job Automation
+   
+** TODO Day 4 [0%]
+   SCHEDULED: <2023-03-02 Thu>
+   - [ ] git
+
+* Week 7
+** TODO Day 1 [0%]
+   SCHEDULED: <2023-03-06 Mon>
+   - [ ] kibana
+
+** TODO Day 2 [0%]
+   SCHEDULED: <2023-03-07 Tue>
+   - [ ] kong
+
+** TODO Day 3 [0%]
+   SCHEDULED: <2023-03-08 Wed>
+   - [ ] scrum
