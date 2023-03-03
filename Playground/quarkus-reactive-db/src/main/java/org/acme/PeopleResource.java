@@ -1,7 +1,5 @@
 package org.acme;
 
-import java.io.StringReader;
-import javax.json.Json;
 import javax.json.JsonObject;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
@@ -11,7 +9,6 @@ import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
-import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
@@ -61,23 +58,6 @@ public class PeopleResource {
                     .onFailure().recoverWithItem(Response.serverError().build());
         }
         
-
-        // TODO fix this shit
-        // @PUT
-        // @Path("{id}")
-        // public Uni<Response> updatePeople(@PathParam("id") Integer id, JsonObject requestBody) {
-        //     return People.<People>findById(id)
-        //             .onItem().ifNotNull().transform(person -> {
-        //                 person.setName(requestBody.getString("name"));
-        //                 person.setUmur(requestBody.getInt("age"));
-        //                 return person;
-        //             })
-        //             .onItem().ifNull().failWith(new WebApplicationException("Person with id " + id + " not found", Response.Status.NOT_FOUND))
-        //             .flatMap(person -> person.persistAndFlush())
-        //             .onItem().transform(rows -> {
-        //                 return rows != null ? Response.ok(rows).build() : Response.status(Response.Status.INTERNAL_SERVER_ERROR).build();
-        //             });
-        // }
 
         @DELETE
         @Path("{id}")
