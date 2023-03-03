@@ -50,4 +50,33 @@ public class PackageResource {
                 .onFailure().recoverWithItem(Response.serverError().build());
     }
 
+    @PUT
+    @Path("{id}")
+    public Uni<Response> putGithub(@PathParam("id") Integer id, JsonObject requestBody) {
+        LOG.info("Request PUT Method with id " + id + " and " + requestBody);
+        return Package.<Package>findById(id)
+                .onItem().ifNull().failWith(new NotFoundException())
+                .onItem().transform(person -> {
+                    // person.setName(requestBody.getString("name"));
+                    // person.setUmur(requestBody.getInt("age"));
+                    return person;
+                })
+                .onItem().transformToUni(person -> person.persistAndFlush())
+                .onItem().transform(x -> Response.ok("ok").build())
+                .onFailure().recoverWithItem(Response.serverError().build());
+    }
+    
+
+    @DELETE
+    @Path("{id}")
+    public Uni<Response> deleteGithub(Integer id) {
+        LOG.info("Request DELETE Method to id " + id);
+        return Package.delete("id", id)
+                .onItem().transform(rows -> {
+                    return rows > 0 ? Response.noContent().build()
+                                    : Response.status(Status.NOT_FOUND).build();
+                })
+                .onFailure().recoverWithItem(Response.serverError().build());
+    }
+
 }

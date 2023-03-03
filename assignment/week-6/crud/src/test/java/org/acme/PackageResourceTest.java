@@ -51,4 +51,30 @@ public class PackageResourceTest {
                 .body(is(equalTo("ok")));
     }
 
+    @Test
+    @Order(3)
+    public void testPutPeople() {
+        JsonObject requestBody = Json.createObjectBuilder()
+                                        .add("name", "Simon")
+                                        .add("age", 30)
+                                        .build();
+
+        given()
+            .body(requestBody.toString())
+            .header("Content-Type", "application/json")
+            .when().put("100")
+            .then()
+                .statusCode(Response.Status.OK.getStatusCode())
+                .body(is(equalTo("ok")));
+    }
+
+    @Test
+    @Order(4)
+    public void testDeletePerson() {
+        given()
+            .when().delete("100")
+            .then()
+                .statusCode(Response.Status.NO_CONTENT.getStatusCode());
+    }
+
 }
