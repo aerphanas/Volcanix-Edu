@@ -28,7 +28,7 @@ public class Package extends PanacheEntityBase {
     public String arch;
 
     @Column(name = "Description")
-    public String repo;
+    public String desc;
     
     @Column(name = "URL")
     public String url;
@@ -63,12 +63,12 @@ public class Package extends PanacheEntityBase {
         this.arch = arch;
     }
 
-    public String getRepo() {
-        return repo;
+    public String getDesc() {
+        return desc;
     }
 
-    public void setRepo(String repo) {
-        this.repo = repo;
+    public void setDesc(String desc) {
+        this.desc = desc;
     }
 
     public String getUrl() {

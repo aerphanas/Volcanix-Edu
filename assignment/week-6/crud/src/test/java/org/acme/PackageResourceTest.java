@@ -39,4 +39,16 @@ public class PackageResourceTest {
                 .body(is(not(empty())));
     }
 
+    @Test
+    @Order(2)
+    public void testPostPeople() {
+        given()
+            .body(requestBody.toString())
+            .header("Content-Type", "application/json")
+            .when().post()
+            .then()
+                .statusCode(Response.Status.OK.getStatusCode())
+                .body(is(equalTo("ok")));
+    }
+
 }
