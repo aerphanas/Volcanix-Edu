@@ -15,6 +15,7 @@ import javax.json.JsonObject;
 
 import org.jboss.logging.Logger;
 
+import io.quarkus.hibernate.reactive.panache.PanacheEntityBase;
 import io.smallrye.mutiny.Uni;
 
 @Path("/packages")
@@ -45,7 +46,7 @@ public class PackageResource {
         // ke database sudah ada atau belum, bila sudah ada maka membuat exception yang
         // nanti akan ditangkap oleh onFailure bila tidak maka akan lanjut menambahkan
         // request ke database
-        return Package.find("name", requestBody.getString("Name")).firstResult()
+        return Package.find("Name", requestBody.getString("Name")).firstResult()
             .onItem().ifNotNull().failWith(() -> new NotFoundException("Package not found in database"))
             .onItem().transformToUni( x -> {
                 pkg.setName(requestBody.getString("Name"));
@@ -66,21 +67,17 @@ public class PackageResource {
     public Uni<Response> putPackage(String name, JsonObject requestBody) {
         LOG.info("Request PUT " + requestBody + " to database");
 
-        Package pkg = new Package();
-
         // hampir sama dengan method POST tetapi bedanya method ini mengecek
         // apakah nama tidak ada dalam database, bila tidak ada kita tidak dapat
         // mengubahnya dan akan mengirimkan bad request atau 400 ke client
-        return Package.find("name", requestBody.getString("Name")).firstResult()
+        return Package.find("Name", requestBody.getString("Name")).firstResult()
             .onItem().ifNull().failWith(() -> new NotFoundException("Package not found in database"))
             .onItem().transformToUni( x -> {
-                pkg.setName(requestBody.getString("Name"));
-                pkg.setArch(requestBody.getString("Architecture"));
-                pkg.setDesc(requestBody.getString("Description"));
-                pkg.setUrl(requestBody.getString("URL"));
-                pkg.setMaintainer(requestBody.getString("Maintainer"));
-                pkg.setLicense(requestBody.getString("License"));
-                return pkg.persistAndFlush();
+                return Package.update("Name = ?1, Architecture = ?2, Description = ?3, URL = ?4, Maintainer = ?5, License = ?6 where Name = ?7"
+                        , requestBody.getString("Name"), requestBody.getString("Architecture")
+                        , requestBody.getString("Description"), requestBody.getString("URL")
+                        , requestBody.getString("Maintainer"), requestBody.getString("License")
+                        , requestBody.getString("Name"));
             })
             .onItem().transform(rows -> Response.ok("ok").build())
             .onFailure().recoverWithItem(Response.status(Status.BAD_REQUEST).build());
