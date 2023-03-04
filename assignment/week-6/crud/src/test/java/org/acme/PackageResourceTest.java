@@ -55,14 +55,18 @@ public class PackageResourceTest {
     @Order(3)
     public void testPutPeople() {
         JsonObject requestBody = Json.createObjectBuilder()
-                                        .add("name", "Simon")
-                                        .add("age", 30)
+                                        .add("Name", "gcc")
+                                        .add("Architecture", "x86_64")
+                                        .add("Description", "The GNU Compiler Collection - C and C++ frontends")
+                                        .add("URL", "https://gcc.gnu.org/")
+                                        .add("Maintainer", "Frederik Schwan")
+                                        .add("License", "FDL, GPL3, LGPL, custom")
                                         .build();
 
         given()
             .body(requestBody.toString())
             .header("Content-Type", "application/json")
-            .when().put("100")
+            .when().put(requestBody.getString("Name"))
             .then()
                 .statusCode(Response.Status.OK.getStatusCode())
                 .body(is(equalTo("ok")));
@@ -72,7 +76,7 @@ public class PackageResourceTest {
     @Order(4)
     public void testDeletePerson() {
         given()
-            .when().delete("100")
+            .when().delete(requestBody.getString("Name"))
             .then()
                 .statusCode(Response.Status.NO_CONTENT.getStatusCode());
     }

@@ -39,6 +39,7 @@ public class Package extends PanacheEntityBase {
     @Column(name = "License")
     public String license;
 
+    // Getter & Setter
     public String getId() {
         return id;
     }

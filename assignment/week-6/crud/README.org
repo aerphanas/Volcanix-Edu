@@ -1,0 +1,136 @@
+#+TITLE: CRUD App with Reactive Quarkus
+
+Mencoba menggunakan Hibernate Reactive Panache, 6 kolom database terinspirasi dari Arch Linux Website, mempelajari Reactive Panache dari [[https://quarkus.io/guides/hibernate-reactive-panache#how-and-why-we-simplify-hibernate-reactive-mappings][Quarkus web]] dan [[https://github.com/quarkusio/quarkus-quickstarts/tree/main/hibernate-reactive-panache-quickstart][contoh di github]]
+
+[[https://en.wikipedia.org/wiki/Create,_read,_update_and_delete#RESTful_APIs][Rest API]]
+
+| CRUD   | HTTP      |
+|--------+-----------|
+| Create | POST, PUT |
+| Read   | GET       |
+| Update | PUT       |
+| Delete | DELETE    |
+
+
+* List Extensions Installed
+  - quarkus-hibernate-reactive-panache
+  - quarkus-reactive-pg-client
+  - quarkus-resteasy-reactive-jackson
+
+* Run Dev Mode
+
+#+BEGIN_SRC
+./mvnw quarkus:dev
+#+END_SRC
+
+* Run Test
+
+#+BEGIN_SRC
+./mvnw quarkus:test
+#+END_SRC
+
+* API
+:PROPERTIES:
+:header-args: :var url="http://localhost:8000/packages" :exports both
+:END:
+
+- Url: http://localhost:8000/packages
+
+** GET
+
+#+BEGIN_SRC restclient
+GET :url
+#+END_SRC
+
+#+RESULTS:
+#+BEGIN_SRC js
+[
+  {
+    "id": "07846b50-6185-499b-a7d5-18d10d9c4bbf",
+    "name": "gcc",
+    "arch": "x86_64",
+    "desc": "The GNU Compiler Collection - C and C++ frontends",
+    "url": "https://gcc.gnu.org/",
+    "maintainer": "Giancarlo Razzolini",
+    "license": "FDL, GPL3, LGPL, custom"
+  },
+  {
+    "id": "ca036bee-d40c-48e4-a366-97eccdaefef5",
+    "name": "gcc",
+    "arch": "x86",
+    "desc": "The GNU Compiler Collection - C and C++ frontends",
+    "url": "https://gcc.gnu.org/",
+    "maintainer": "Frederik Schwan",
+    "license": "FDL, GPL3, LGPL, custom"
+  }
+]
+// GET http://localhost:8000/packages
+// HTTP/1.1 200 OK
+// Content-Type: application/json;charset=UTF-8
+// content-length: 462
+// Request duration: 0.042997s
+#+END_SRC
+
+** POST
+
+#+BEGIN_SRC restclient
+POST :url
+Content-Type: application/json
+{
+    "Name": "gcc",
+    "Architecture": "x86_64",
+    "Description": "The GNU Compiler Collection - C and C++ frontends",
+    "URL": "https://gcc.gnu.org/",
+    "Maintainer": "Giancarlo Razzolini",
+    "License": "FDL, GPL3, LGPL, custom"
+}
+#+END_SRC
+
+#+RESULTS:
+#+BEGIN_SRC js
+ok
+// POST http://localhost:8000/packages
+// HTTP/1.1 200 OK
+// Content-Type: application/json;charset=UTF-8
+// content-length: 2
+// Request duration: 0.148421s
+#+END_SRC
+
+** PUT
+
+#+BEGIN_SRC restclient
+PUT :url/gcc
+Content-Type: application/json
+{
+    "Name": "gcc",
+    "Architecture": "x86",
+    "Description": "The GNU Compiler Collection - C and C++ frontends",
+    "URL": "https://gcc.gnu.org/",
+    "Maintainer": "Frederik Schwan",
+    "License": "FDL, GPL3, LGPL, custom"
+}
+#+END_SRC
+
+#+RESULTS:
+#+BEGIN_SRC js
+ok
+// PUT http://localhost:8000/packages/gcc
+// HTTP/1.1 200 OK
+// Content-Type: application/json;charset=UTF-8
+// content-length: 2
+// Request duration: 0.078609s
+#+END_SRC
+
+** DELETE
+
+#+BEGIN_SRC restclient
+DELETE :url/gcc
+#+END_SRC
+
+#+RESULTS:
+#+BEGIN_SRC js
+// DELETE http://localhost:8000/packages/gcc
+// HTTP/1.1 204 No Content
+// Request duration: 0.062232s
+#+END_SRC
+
