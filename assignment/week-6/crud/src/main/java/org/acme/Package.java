@@ -10,7 +10,6 @@ import org.hibernate.annotations.GenericGenerator;
 
 import io.quarkus.hibernate.reactive.panache.PanacheEntityBase;
 
-
 @Entity
 @Table(name = "package", schema="packages")
 public class Package extends PanacheEntityBase {
@@ -19,27 +18,29 @@ public class Package extends PanacheEntityBase {
     @GeneratedValue(generator = "uuid")
     @GenericGenerator(name = "uuid", strategy = "org.hibernate.id.UUIDGenerator")
     @Column(name = "id")
-    public String id;
+    private String id;
 
     @Column(name = "Name")
-    public String name;
+    private String name;
     
     @Column(name = "Architecture")
-    public String arch;
+    private String arch;
 
     @Column(name = "Description")
-    public String desc;
+    private String desc;
     
     @Column(name = "URL")
-    public String url;
+    private String url;
 
     @Column(name = "Maintainer")
-    public String maintainer;
+    private String maintainer;
 
     @Column(name = "License")
-    public String license;
+    private String license;
+    
+    public Package() {
+    }
 
-    // Getter & Setter
     public String getId() {
         return id;
     }
@@ -94,6 +95,59 @@ public class Package extends PanacheEntityBase {
 
     public void setLicense(String license) {
         this.license = license;
+    }
+
+    // Untuk Builder Pattern
+    private Package(PackageBuilder builder) {
+        this.name = builder.name;
+        this.arch = builder.arch;
+        this.desc = builder.desc;
+        this.url = builder.url;
+        this.maintainer = builder.maintainer;
+        this.license = builder.license;
+	}
+
+    public static class PackageBuilder {
+        private String name;
+        private String arch;
+        private String desc;
+        private String url;
+        private String maintainer;
+        private String license;
+
+        public PackageBuilder setName(String name) {
+            this.name = name;
+            return this;
+        }
+
+        public PackageBuilder setArch(String arch) {
+            this.arch = arch;
+            return this;
+        }
+
+        public PackageBuilder setDesc(String desc) {
+            this.desc = desc;
+            return this;
+        }
+
+        public PackageBuilder setUrl(String url) {
+            this.url = url;
+            return this;
+        }
+
+        public PackageBuilder setMaintainer(String maintainer) {
+            this.maintainer = maintainer;
+            return this;
+        }
+
+        public PackageBuilder setLicense(String license) {
+            this.license = license;
+            return this;
+        }
+
+        public Package build() {
+			return new Package(this);
+		}
     }
 
 }
