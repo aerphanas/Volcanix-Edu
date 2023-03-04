@@ -25,23 +25,23 @@ public class PackageResource {
     private static final Logger LOG = Logger.getLogger(PackageResource.class);
 
     @GET
-    public Uni<Response> get() {
+    public Uni<Response> getPackage() {
         LOG.info("Request GET Method for Package");
-        // agan mengembalikan semua item yang ada di Package entity
+        // akan mengembalikan semua item yang ada di Package entity
         // itemnya akan tercetak dengan status ok
         // bila ada kesalahan maka mengembalikan server error (500)
         return Package.listAll()
-                .onItem().transform(row -> Response.ok(row).build())
+                .onItem().transform(rows -> Response.ok(rows).build())
                 .onFailure().recoverWithItem(Response.serverError().build());
     }
 
     @POST
-    public Uni<Response> addGithub(JsonObject requestBody) {
+    public Uni<Response> postPackage(JsonObject requestBody) {
         LOG.info("Request POST " + requestBody + " to database");
 
         Package pkg = new Package();
 
-        // menggunakan Package Find akar mengetahui bila nama yang akan dimasuki
+        // menggunakan Package Find akan mengetahui bila nama yang akan dimasuki
         // ke database sudah ada atau belum, bila sudah ada maka membuat exception yang
         // nanti akan ditangkap oleh onFailure bila tidak maka akan lanjut menambahkan
         // request ke database
@@ -63,7 +63,7 @@ public class PackageResource {
 
     @PUT
     @Path("{name}")
-    public Uni<Response> putGithub(@PathParam("name") String name, JsonObject requestBody) {
+    public Uni<Response> putPackage(String name, JsonObject requestBody) {
         LOG.info("Request PUT " + requestBody + " to database");
 
         Package pkg = new Package();
@@ -88,7 +88,7 @@ public class PackageResource {
 
     @DELETE
     @Path("{name}")
-    public Uni<Response> deleteGithub(String name) {
+    public Uni<Response> deletePackage(String name) {
         LOG.info("Request DELETE to Package " + name);
     
         // menghapus dengan nama bila terjadi error maka akan

@@ -31,7 +31,7 @@ public class PackageResourceTest {
 
     @Test
     @Order(1)
-    public void testGetAllPeople() {
+    public void testGetAllPackage() {
         given()
             .when().get()
             .then()
@@ -41,7 +41,7 @@ public class PackageResourceTest {
 
     @Test
     @Order(2)
-    public void testPostPeople() {
+    public void testPostPackage() {
         given()
             .body(requestBody.toString())
             .header("Content-Type", "application/json")
@@ -53,7 +53,7 @@ public class PackageResourceTest {
 
     @Test
     @Order(3)
-    public void testPutPeople() {
+    public void testPutPackage() {
         JsonObject requestBody = Json.createObjectBuilder()
                                         .add("Name", "gcc")
                                         .add("Architecture", "x86_64")
@@ -74,7 +74,7 @@ public class PackageResourceTest {
 
     @Test
     @Order(4)
-    public void testDeletePerson() {
+    public void testDeletePackage() {
         given()
             .when().delete(requestBody.getString("Name"))
             .then()
