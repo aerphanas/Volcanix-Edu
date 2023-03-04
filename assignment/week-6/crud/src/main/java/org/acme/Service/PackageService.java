@@ -1,32 +1,29 @@
-package org.acme;
+package org.acme.Service;
 
-import javax.ws.rs.DELETE;
-import javax.ws.rs.GET;
+import org.acme.Controler.PackageResource;
+import org.acme.Model.Package;
+
 import javax.ws.rs.NotFoundException;
-import javax.ws.rs.POST;
-import javax.ws.rs.PUT;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
-import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 
 import javax.json.JsonObject;
 
+import javax.enterprise.context.ApplicationScoped;
+
 import org.jboss.logging.Logger;
 
 import io.smallrye.mutiny.Uni;
 
-@Path("/packages")
-@Produces(MediaType.APPLICATION_JSON)
-public class PackageResource {
+@ApplicationScoped
+public class PackageService {
 
     // membuat log agar debugging lebih mudah
     private static final Logger LOG = Logger.getLogger(PackageResource.class);
 
-    @GET
-    public Uni<Response> getPackage() {
+    public Uni<Response> packageList() {
         LOG.info("Request GET Method for Package");
+
         // akan mengembalikan semua item yang ada di Package entity
         // itemnya akan tercetak dengan status ok
         // bila ada kesalahan maka mengembalikan server error (500)
@@ -35,8 +32,7 @@ public class PackageResource {
                 .onFailure().recoverWithItem(Response.serverError().build());
     }
 
-    @POST
-    public Uni<Response> postPackage(JsonObject requestBody) {
+    public Uni<Response> packagePost(JsonObject requestBody) {
         LOG.info("Request POST " + requestBody + " to database");
 
         String name, arch, desc, url, maintainer, license;
@@ -77,11 +73,8 @@ public class PackageResource {
                 .onItem().transform(rows -> Response.ok("ok").build())
                 .onFailure().recoverWithItem(Response.serverError().build());
     }
-    
 
-    @PUT
-    @Path("{name}")
-    public Uni<Response> putPackage(String name, JsonObject requestBody) {
+    public Uni<Response> packagePut(String name, JsonObject requestBody) {
         LOG.info("Request PUT " + requestBody + " to database");
 
         String arch, desc, url, maintainer, license;
@@ -114,9 +107,7 @@ public class PackageResource {
             .onFailure().recoverWithItem(Response.status(Status.BAD_REQUEST).build());
     }
 
-    @DELETE
-    @Path("{name}")
-    public Uni<Response> deletePackage(String name) {
+    public Uni<Response> packageDelete (String name) {
         LOG.info("Request DELETE to Package " + name);
     
         // menghapus dengan nama bila terjadi error maka akan
@@ -128,5 +119,4 @@ public class PackageResource {
                 })
                 .onFailure().recoverWithItem(Response.status(Status.BAD_REQUEST).build());
     }
-
 }

@@ -1,5 +1,7 @@
 package org.acme;
 
+import org.acme.Controler.PackageResource;
+
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.*;
 
