@@ -28,8 +28,8 @@ public class PackageService {
         // itemnya akan tercetak dengan status ok
         // bila ada kesalahan maka mengembalikan server error (500)
         return Package.listAll()
-                .onItem().transform(rows -> Response.ok(rows).build())
-                .onFailure().recoverWithItem(Response.serverError().build());
+                        .onItem().transform(rows -> Response.ok(rows).build())
+                        .onFailure().recoverWithItem(Response.serverError().build());
     }
 
     public Uni<Response> packagePost(JsonObject requestBody) {
@@ -68,10 +68,10 @@ public class PackageService {
         // nanti akan ditangkap oleh onFailure bila tidak maka akan lanjut menambahkan
         // request ke database
         return Package.find("Name", name).firstResult()
-                .onItem().ifNotNull().failWith(() -> new NotFoundException("Package not found in database"))
-                .onItem().transformToUni(x -> pkgsin.persistAndFlush())
-                .onItem().transform(rows -> Response.ok("ok").build())
-                .onFailure().recoverWithItem(Response.serverError().build());
+                        .onItem().ifNotNull().failWith(() -> new NotFoundException("Package not found in database"))
+                        .onItem().transformToUni(x -> pkgsin.persistAndFlush())
+                        .onItem().transform(rows -> Response.ok("ok").build())
+                        .onFailure().recoverWithItem(Response.serverError().build());
     }
 
     public Uni<Response> packagePut(String name, JsonObject requestBody) {
@@ -97,14 +97,15 @@ public class PackageService {
         // apakah nama tidak ada dalam database, bila tidak ada kita tidak dapat
         // mengubahnya dan akan mengirimkan bad request atau 400 ke client
         return Package.find("Name", requestBody.getString("Name")).firstResult()
-            .onItem().ifNull().failWith(() -> new NotFoundException("Package not found in database"))
-            .onItem().transformToUni( x -> {
-                return Package.update(
-                    "Name = ?1, Architecture = ?2, Description = ?3, URL = ?4, Maintainer = ?5, License = ?6 where Name = ?7"
-                    , name, arch, desc, url, maintainer, license, name);
-            })
-            .onItem().transform(rows -> Response.ok("ok").build())
-            .onFailure().recoverWithItem(Response.status(Status.BAD_REQUEST).build());
+                        .onItem().ifNull().failWith(() -> new NotFoundException("Package not found in database"))
+                        .onItem().transformToUni( x -> {
+                            return Package.update(
+                                "Name = ?1, Architecture = ?2, Description = ?3," +
+                                "URL = ?4, Maintainer = ?5, License = ?6 where Name = ?7"
+                                , name, arch, desc, url, maintainer, license, name);
+                        })
+                        .onItem().transform(rows -> Response.ok("ok").build())
+                        .onFailure().recoverWithItem(Response.status(Status.BAD_REQUEST).build());
     }
 
     public Uni<Response> packageDelete (String name) {
@@ -113,10 +114,10 @@ public class PackageService {
         // menghapus dengan nama bila terjadi error maka akan
         // tertangkap oleh onFailure dan memberikan kode 400 bad request
         return Package.delete("name", name)
-                .onItem().transform(rows -> {
-                    return rows > 0 ? Response.noContent().build()
-                                    : Response.status(Status.NOT_FOUND).build();
-                })
-                .onFailure().recoverWithItem(Response.status(Status.BAD_REQUEST).build());
+                        .onItem().transform(rows -> {
+                            return rows > 0 ? Response.noContent().build()
+                                            : Response.status(Status.NOT_FOUND).build();
+                        })
+                        .onFailure().recoverWithItem(Response.status(Status.BAD_REQUEST).build());
     }
 }
