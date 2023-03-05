@@ -1,6 +1,7 @@
 package org.acme.Controler;
 
 import org.acme.Service.PackageService;
+import org.acme.Util.RegexSafety;
 
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
