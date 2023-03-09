@@ -9,6 +9,7 @@ Back-end with Java
   - [[https://quarkus.io/][Quarkus]]
   - [[https://community.jaspersoft.com/project/jasperreports-library][Jasper Reports]]
   - [[https://poi.apache.org/][Apache POI]]
+  - [[https://poi.apache.org/apidocs/5.0/][Apache POI Api Docs]]
 
 * Week 1
 ** DONE Day 1 [100%]
@@ -104,9 +105,9 @@ Back-end with Java
    - [X] Reporting jasper
 
 * Week 6
-** TODO Day 1 [0%]
+** DONE Day 1 [100%]
    SCHEDULED: <2023-02-27 Mon>
-   - [ ] Apache Poi
+   - [X] Apache Poi
 
 ** TODO Day 2 [0%]
    SCHEDULED: <2023-02-28 Tue>
