@@ -1,0 +1,4 @@
+#+TITLE: Mailer
+
+[[https://quarkus.io/guides/mailer-reference][quarkus mailer reference]]
+[[https://quarkus.io/guides/mailer][quarkus mailer]]

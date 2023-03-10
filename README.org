@@ -113,13 +113,13 @@ Back-end with Java
    SCHEDULED: <2023-02-28 Tue>
    - [X] Email
 
-** TODO Day 3 [0%]
+** DONE Day 3 [100%]
    SCHEDULED: <2023-03-01 Wed>
-   - [ ] Job Automation
+   - [X] Job Automation
    
-** TODO Day 4 [0%]
+** DONE Day 4 [100%]
    SCHEDULED: <2023-03-02 Thu>
-   - [ ] git
+   - [X] git
 
 * Week 7
 ** TODO Day 1 [0%]
