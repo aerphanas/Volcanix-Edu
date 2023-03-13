@@ -1,0 +1,13 @@
+#+TITLE: Kebun Pak dengklek
+
+Pak dengklek memiliki sebuah kebun tomat yang menghasilkan 500 kg buah tomat dalam 1 minggu,
+buatlah sebuah aplikasi yang dapat melakukan pencatatan hasil kebun pak dengklek dan kirimkan
+email setiap akhir bulan terkait hasil panen tomat di kebun pak dengklek.
+
+| id   | komoditas | total | createdAt | updatedAt |
+|------+-----------+-------+-----------+-----------|
+| UUID | tomat     | -     | -         | -         |
+
+* Quarkus extensions
+- quarkus-scheduler
+- quarkus-mailer
