@@ -61,19 +61,19 @@ public class Kebun extends PanacheEntityBase {
     this.total = total;
   }
 
-  public Date getCreatedAt() {
+  public Date getCreated() {
     return created;
   }
 
-  public void setCreatedAt(Date created) {
+  public void setCreated(Date created) {
     this.created = created;
   }
 
-  public Date getUpdatedAt() {
+  public Date getUpdated() {
     return updated;
   }
 
-  public void setUpdatedAt(Date updated) {
+  public void setUpdated(Date updated) {
     this.updated = updated;
   }
 
@@ -104,11 +104,11 @@ public class Kebun extends PanacheEntityBase {
       this.total = total;
       return this;
     }
-    public KebunBuilder addCreatedAt(Date created) {
+    public KebunBuilder addCreated(Date created) {
       this.created = created;
       return this;
     }
-    public KebunBuilder addUpdatedAt(Date updated) {
+    public KebunBuilder addUpdated(Date updated) {
       this.updated = updated;
       return this;
     }

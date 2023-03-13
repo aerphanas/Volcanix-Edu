@@ -61,8 +61,8 @@ public class PanenService {
     Kebun inputKebun = new Kebun.KebunBuilder()
                                 .addKomoditas(komoditas)
                                 .addTotal(total)
-                                .addCreatedAt(sqlDate)
-                                .addUpdatedAt(sqlDate)
+                                .addCreated(sqlDate)
+                                .addUpdated(sqlDate)
                                 .build();
 
     return Kebun.find("created", sqlDate).firstResult()
