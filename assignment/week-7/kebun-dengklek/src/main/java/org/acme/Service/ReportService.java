@@ -1,15 +1,23 @@
 package org.acme.Service;
 
+import org.acme.Model.Kebun; 
+
+import java.io.File;
 import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Map;
 
 import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Inject;
 
-import org.acme.Model.Kebun;
 import org.jboss.logging.Logger;
 
+import io.quarkus.mailer.Mail;
+import io.quarkus.mailer.reactive.ReactiveMailer;
 import io.quarkus.scheduler.Scheduled;
+
+import io.smallrye.mutiny.Uni;
+
 import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JasperCompileManager;
 import net.sf.jasperreports.engine.JasperExportManager;
@@ -21,12 +29,14 @@ import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 @ApplicationScoped
 public class ReportService {
 
+  @Inject
+  ReactiveMailer reactiveMailer;
+
   private static final Logger LOG = Logger.getLogger(ReportService.class);
 
-  // @Scheduled(every="10s")   
-  @Scheduled(cron = "0 0 0 30 * ?")  
-  void hasilReport() {
+  void genHasilReport() {
 
+    // mengambil template
     final InputStream reportStream = getClass().getResourceAsStream("/Template/Report.jrxml");
   
     Kebun.listAll().subscribe().with( entities -> {
@@ -45,7 +55,23 @@ public class ReportService {
       },
       error -> LOG.error(error.getMessage())
     );
+
   }
-  
+
+  // @Scheduled(every = "10s")
+  // berjalan setiap tanggal 30
+  @Scheduled(cron = "0 0 0 30 * ?")
+  public Uni<Void> sendEmailUsingReactiveMailer() {
+    LOG.info("Creating Report..");
+    genHasilReport();
+    return reactiveMailer.send(
+                Mail.withText("muhamadaviv14@gmail.com",
+                    "Report Hasil Panen Akhir Bulan",
+                    "Report Hasil Panen"
+                ).addAttachment("Report-Hasil-Panen", new File("Report.pdf"), "application/pdf")
+            )
+            .onItem().invoke( () -> LOG.info("Sending Email : OK"))
+            .onFailure().invoke( x -> LOG.error("Sending Email : Error"));
+  }
 
 }

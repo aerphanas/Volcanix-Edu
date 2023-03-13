@@ -9,5 +9,52 @@ email setiap akhir bulan terkait hasil panen tomat di kebun pak dengklek.
 | UUID | tomat     | -     | -         | -         |
 
 * Quarkus extensions
-- quarkus-scheduler
 - quarkus-mailer
+- quarkus-scheduler
+- quarkus-reactive-pg-client
+- quarkus-resteasy-reactive-jackson
+- quarkus-hibernate-reactive-panache
+
+* Dependency
+- jasperreports
+
+* API
+:PROPERTIES:
+:header-args: :var url="http://localhost:8080/panen" :exports both
+:END:
+
+- Url: http://localhost:8080/panen
+
+** GET
+
+#+BEGIN_SRC restclient
+GET :url
+#+END_SRC
+
+** POST
+
+#+BEGIN_SRC restclient
+POST :url
+Content-Type: application/json
+{
+    "komoditas": "mangga",
+    "total": 10
+}
+#+END_SRC
+
+** PUT
+
+#+BEGIN_SRC restclient
+PUT :url/2023-03-13
+Content-Type: application/json
+{
+    "komoditas": "jagung",
+    "total": 10000
+}
+#+END_SRC
+
+** DELETE
+
+#+BEGIN_SRC restclient
+DELETE :url/2023-03-13
+#+END_SRC

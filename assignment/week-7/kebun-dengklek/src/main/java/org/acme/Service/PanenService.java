@@ -1,5 +1,8 @@
 package org.acme.Service;
 
+import org.acme.Controler.PanenResource;
+import org.acme.Model.Kebun;
+
 import java.sql.Date;
 import java.time.LocalDate;
 
@@ -8,8 +11,6 @@ import javax.ws.rs.core.Response.Status;
 import javax.ws.rs.NotFoundException;
 import javax.ws.rs.core.Response;
 
-import org.acme.Controler.PanenResource;
-import org.acme.Model.Kebun;
 import org.jboss.logging.Logger;
 
 import io.smallrye.mutiny.Uni;
@@ -110,8 +111,8 @@ public class PanenService {
                                 .onItem().ifNull().failWith( () -> new NotFoundException("not found in database"))
                                 .onItem().transformToUni( x -> {
                                     LOG.info("PUT Ok");
-                                    return Kebun.update( "komoditas = ?1, total = ?2, updated = ?3"
-                                                          , komoditas, total, sqlDate);
+                                    return Kebun.update( "komoditas = ?1, total = ?2, updated = ?3  where created = ?4"
+                                                          , komoditas, total, sqlDate, created);
                                 })
                                 .onItem().transform(rows -> Response.ok("ok").build())
                                 .onFailure().recoverWithItem(Response.status(Status.BAD_REQUEST).build());
