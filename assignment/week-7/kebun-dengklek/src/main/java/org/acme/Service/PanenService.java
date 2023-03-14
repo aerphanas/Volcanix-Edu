@@ -67,7 +67,7 @@ public class PanenService {
                                 .build();
 
     return Kebun.find("created", sqlDate).firstResult()
-                                .onItem().ifNotNull().failWith(() -> new NotFoundException("Package not found in database"))
+                                .onItem().ifNotNull().failWith(() -> new NotFoundException("not found in database"))
                                 .onItem().transformToUni(x -> {
                                     LOG.info("POST Ok");
                                     return inputKebun.persistAndFlush();

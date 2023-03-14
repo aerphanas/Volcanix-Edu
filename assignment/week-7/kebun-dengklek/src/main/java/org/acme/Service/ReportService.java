@@ -58,7 +58,6 @@ public class ReportService {
 
   }
 
-  // @Scheduled(every = "10s")
   // berjalan setiap tanggal 30
   @Scheduled(cron = "0 0 0 30 * ?")
   public Uni<Void> sendEmailUsingReactiveMailer() {
