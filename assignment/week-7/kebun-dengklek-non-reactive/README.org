@@ -1,0 +1,60 @@
+#+TITLE: Kebun Pak dengklek non Reactive
+
+Pak dengklek memiliki sebuah kebun tomat yang menghasilkan 500 kg buah tomat dalam 1 minggu,
+buatlah sebuah aplikasi yang dapat melakukan pencatatan hasil kebun pak dengklek dan kirimkan
+email setiap akhir bulan terkait hasil panen tomat di kebun pak dengklek.
+
+| id   | komoditas | total | createdAt | updatedAt |
+|------+-----------+-------+-----------+-----------|
+| UUID | tomat     | -     | -         | -         |
+
+* Quarkus extensions
+- quarkus-mailer
+- quarkus-scheduler
+- quarkus-jdbc-postgresql
+- quarkus-resteasy-reactive-jackson
+- quarkus-hibernate-orm-panache
+
+* Dependency
+- jasperreports
+
+* API
+:PROPERTIES:
+:header-args: :var url="http://localhost:8080/panen" :exports both
+:END:
+
+- Url: http://localhost:8080/panen
+
+** GET
+
+#+BEGIN_SRC restclient
+GET :url
+#+END_SRC
+
+** POST
+
+#+BEGIN_SRC restclient
+POST :url
+Content-Type: application/json
+{
+    "komoditas": "mangga",
+    "total": 10
+}
+#+END_SRC
+
+** PUT
+
+#+BEGIN_SRC restclient
+PUT :url/2023-03-13
+Content-Type: application/json
+{
+    "komoditas": "jagung",
+    "total": 10000
+}
+#+END_SRC
+
+** DELETE
+
+#+BEGIN_SRC restclient
+DELETE :url/2023-03-13
+#+END_SRC
