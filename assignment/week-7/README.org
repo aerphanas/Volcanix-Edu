@@ -1,0 +1,3 @@
+#+TITLE: Dual implementation
+
+membuat 2 buat quarkus app dengan 2 buah tipe database yang berbeda, menggunakan reactive dan non reactive, karna pada dasarnya app yang menggunakan reactive hanya menggunakan Uni yang akan membuat thread baru, jika kita ingin mengakses object yang ada didalam Uni kita hanya perlu membukanya
